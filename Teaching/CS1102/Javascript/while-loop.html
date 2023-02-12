@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head> <title>What day is it today</title>
+	<script>
+	function init() {
+		var isInputvalid, x;
+		var feedback ="", instruction = "Input a positive number"
+		isInputValid = false;
+		while (!isInputValid) {
+			x = prompt(feedback + instruction);
+			if (isNaN(x)) {
+				feedback = "Please enter a NUMBER!";
+			}
+			else if (Number(x) <= 0) {
+				feedback = "Please enter a POSITIVE number!"
+			}
+			else
+				isInputValid = true;
+		}
+		document.getElementById("message").innerHTML = "The positive number that you entered is " + x
+	}
+	</script>
+	</head>
+<body onload="init();">
+	<div id="message"></div>
+</body>
+</html>

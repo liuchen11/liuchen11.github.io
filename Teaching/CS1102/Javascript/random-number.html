@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript Button</title>
+		<script>
+			function init() {
+				document.getElementById("number").style = "font-size: 100px;"
+			}
+			function throw_dice() {
+				var n;
+				n = Math.floor(Math.random () * 6) + 1;
+				document.getElementById("number").innerHTML = n;
+			}
+		</script>
+	</head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<h1>Javascript Button</h1>
+	<button id= "dice" onclick="throw_dice();">Throw Dice</button> <br/>
+	<div id= "number" ></div>
+	<!--Page content ends here -->
+</body>
+</html>

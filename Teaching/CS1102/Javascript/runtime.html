@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Run Time</title>
+		<script>
+			function init (){
+				var t1 = new Date();
+				var a = [0, 1];
+				for (var i = 2; i < 10000; i++){
+					a[i] = a[i - 1] + a[i - 2];
+					document.getElementById('result1').innerHTML += 'a[ ' + i + ' ] = ' + a[i] + '<br/>';
+				}
+				var t2 = new Date();
+				runtime = t2 - t1;
+				document.getElementById('runtime1').innerHTML = 'runtime1 = ' + runtime + ' ms';
+
+				var t1 = new Date()
+				var toprint = '';
+				var a = [0, 1];
+				for (var i = 2; i < 10000; i++){
+					a[i] = a[i - 1] + a[i - 2];
+					toprint += 'a[ ' + i + ' ] = ' + a[i] + '<br/>';
+				}
+				document.getElementById('result2').innerHTML = toprint
+				var t2 = new Date()
+				runtime = t2 - t1;
+				document.getElementById('runtime2').innerHTML = 'runtime2 = ' + runtime + ' ms';
+			}
+		</script>
+	</head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<h1>Run Time</h1>
+	<div id="runtime1"></div>
+	<div id="runtime2"></div>
+	<div id="result1"></div>
+	<div id="result2"></div>
+	<!--Page content ends here -->
+</body>
+</html>

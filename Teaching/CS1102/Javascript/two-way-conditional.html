@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Javascript Two-Way Conditional</title>
+	<script>
+		function init() {
+			var p, s;
+			s = "";
+			p = prompt("What is your attendance rate in percentage in this course CS1102? (0-100)");
+			if (Number (p) > 90)
+				s = s + "You have excellent attitude! \n";
+			else
+				s = s + "Please take the effort to attend the class more often."
+			s = s + "Good luck with your quiz and exam!"
+			alert (s);
+		}
+	</script>
+	</head>
+	<body onload="init();">
+		<!-- Page content begins here -->
+		<h1>Two-Way Conditional</h1>
+		<!-- Page content ends here -->
+	</body>
+</html>

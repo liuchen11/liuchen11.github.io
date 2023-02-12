@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head> <title>What day is it today</title>
+	<script>
+	function init() {
+		var i = 0, sum = 0;
+		var N = 10;
+		for(i = 0; i <= N; i++)
+			sum += i
+		document.getElementById('results'). innerHTML = 'The summation of the first ' + N + ' integers is ' + sum;
+	}
+	</script>
+	</head>
+<body onload="init();">
+	<div id="results"></div>
+</body>
+</html>

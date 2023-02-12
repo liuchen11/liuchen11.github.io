@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Example</title>
+	<script type="text/javascript">
+		function init(){
+		var x1, x2, x3, x4, x5;
+		x1 = 2
+		x2 = String(x1)
+		x3 = "-4.5"
+		x4 = Number(x3)
+		x5 = "ABC"
+		document.getElementById("x1").innerHTML = x1
+		document.getElementById("x2").innerHTML = x2
+		document.getElementById("x3").innerHTML = x3
+		document.getElementById("x4").innerHTML = x4
+		document.getElementById("x5").innerHTML = x5
+		document.getElementById("x6").innerHTML = isNaN(x2)
+		document.getElementById("x7").innerHTML = isNaN(x4)
+		document.getElementById("x8").innerHTML = isNaN(x5)
+		}
+	</script>
+</head>
+<body onload="init();">
+	<!-- Page Content Begins Here -->
+	<h2>Variable</h2>
+	x1: <span id="x1"></span> </br>
+	x2: <span id="x2"></span> </br>
+	x3: <span id="x3"></span> </br>
+	x4: <span id="x4"></span> </br>
+	x5: <span id="x5"></span> </br>
+	isNaN(x2): <span id="x6"></span> </br>
+	isNaN(x4): <span id="x7"></span> </br>
+	isNaN(x5): <span id="x8"></span> </br>
+	<!-- Page Content Ends Here -->
+</body>
+</html>

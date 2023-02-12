@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript Array</title>
+		<script>
+			function init(){
+				var a = [0, 1];
+
+				for (var i = 2; i < 10; i++)
+					a[i] = a[i - 1] + a[i - 2];
+
+				document.getElementById('result1').innerHTML='a = [ ' + a + ' ]';
+			}
+		</script>
+	</head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<h1>Javascript Array</h1>
+	<span id="result1"></span> <br/>
+	<!-- Page content ends here -->
+</body>
+</html>

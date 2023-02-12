@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jayascript Input Prompt</title>
+<script>
+	function init() {
+		var name, N;
+		name = prompt("What is your name?");
+		document.getElementById("hello").innerHTML = "Hello " + name + "!";
+		N = prompt("Input a number");
+		document.getElementById("plus1").innerHTML = Number(N) + 1;
+	}
+</script>
+<head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<div id="hello"></div>
+	<p>Your input + 1 results in <span id="plus1"></span> </p>
+	<!-- Page content ends here -->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head> <title>Jayascript</title>
+	<script>
+		function init(){
+			var base = 3, p = 2, times = 3;
+			var count = 0;
+
+			for (count = 0; count < times; count++)
+				base = power (base, p)
+			
+			alert( 'The result is ' + base)
+		}
+		
+		function power (base, p){
+			var result = 1, count = 0;
+			for (count = 0; count < p; count++)
+				result *= base
+			return result
+		}
+	</script>
+	</head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<h1> Calculation </h1>
+	<!-- Page content ends here-->
+</body>
+</html>

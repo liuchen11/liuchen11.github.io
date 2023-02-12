@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head> <title>Jayascript</title>
+	<script>
+		function init() {
+			var result = power_extended (3, 2, 3);
+			alert ('The result is ' + result)
+		}
+		
+		function power_extended(base, p, times) {
+			if (times == 0)
+				return base
+			var result = 1, count = 0;
+			for (count = 0; count < p; count++)
+				result *= base
+			return power_extended (result, p, times - 1)
+		}
+	</script>
+	</head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<h1> Calculation </h1>
+	<!-- Page content ends here-->
+</body>
+</html>

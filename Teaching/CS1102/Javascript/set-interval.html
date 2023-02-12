@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head> <title>Set Interval</title>
+	<script>
+		function init() {
+			document.getElementById("number").style = "font-size: 100px;";
+		}
+		function auto_dice () {
+			document.getElementById("dice").disabled = true;
+			setInterval (throw_dice, 2000)
+		}
+		function throw_dice () {
+			var n;
+			n = Math.floor(Math.random() *6) + 1;
+			document.getElementById("number").innerHTML = n;
+		}
+	</script>
+	<head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<h1>Javascript Button</h1>
+	<button id= "dice" onclick="auto_dice();">Throw Dice Every 2 Seconds</button> <br/>
+	<div id= "number" ></divs>
+	<!-- Page content ends here -->
+</body>
+</html>

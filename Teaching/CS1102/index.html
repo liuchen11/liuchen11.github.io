@@ -5,9 +5,33 @@
     <link rel="stylesheet" type="text/css" media="all" href="../../HomePage/css/all.css"/>
     <link rel="author" href="https://plus.google.com/102799544779548851082/?rel=author"/>
     <meta charset="UTF-8">
+    <script>
+      var expand = {};
+      var display = {}
+
+      function init(){
+        document.getElementById("list-html").style.display = "none";
+        document.getElementById("list-js").style.display = "none";
+        expand = {'list-html': false, 'list-js': false};
+        display = {'list-html': 'block', 'list-js': 'block'};
+      }
+
+      function expandorhide(text_name, list_name){
+        var text = document.getElementById(text_name)
+        var list = document.getElementById(list_name)
+        if (list.style.display == "block" || list.style.display == "inline"){
+          display[list_name] = list.style.display;
+          list.style.display = "none";
+          text.innerHTML = "[Display Codes]"
+        } else {
+          list.style.display = display[list_name];
+          text.innerHTML = "[Hide Codes]"
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body onload="init();">
     <div class="content">
       <div class="nav-left">
         <a href="../../HomePage/index.html"><B style="font-size:25px">Chen Liu</B></a>
@@ -20,9 +44,9 @@
         <td width="20%"></td>
         <td width="60%">
           <div id="demo_code" class="contents">
-            <h1> Demo Code of CS1102 </h1>
-            <h3> Lecture 4 - HTML and CSS </h3>
-            <ul>
+            <h1> Demo Codes of CS1102 </h1>
+            <h3> Lecture 4 - HTML and CSS &nbsp; &nbsp; <a href="#" onclick="expandorhide('fold-html', 'list-html')"><span id="fold-html">[Display Codes]</span></a></h3>
+            <ul id="list-html">
               <li><a href="HTML/title.html">HTML: Title</a></li><br>
               <li><a href="HTML/headings.html">HTML: Headings</a></li><br>
               <li><a href="HTML/headings-example.html">HTML: Headings Example</a></li><br>
@@ -51,6 +75,28 @@
               <li><a href="CSS/float1.html">CSS: Float (1)</a></li><br>
               <li><a href="CSS/float2.html">CSS: Float (2)</a></li><br>
               <li><a href="CSS/float3.html">CSS: Float (3)</a></li><br>
+            </ul>
+            <h3>Lecture 5 - Javascript &nbsp; &nbsp; <a href="#" onclick="expandorhide('fold-js', 'list-js')"><span id="fold-js">[Display Codes]</span></a></h3>
+            <ul id="list-js">
+              <li><a href="Javascript/dynamic-content.html">Javascript: Dynamic Content</a></li><br>
+              <li><a href="Javascript/operators-assignment.html">Javascript: Operators and Assignment</a></li><br>
+              <li><a href="Javascript/conversion.html">Javascript: Conversion between Number and String</a></li><br>
+              <li><a href="Javascript/user-input.html">Javascript: Prompting User Input</a></li><br>
+              <li><a href="Javascript/one-way-conditional.html">Javascript: One-Way Conditional</a></li><br>
+              <li><a href="Javascript/two-way-conditional.html">Javascript: Two-Way Conditional</a></li><br>
+              <li><a href="Javascript/n-way-conditional.html">Javascript: N-Way Conditional</a></li><br>
+              <li><a href="Javascript/switch.html">Javascript: Switch</a></li><br>
+              <li><a href="Javascript/for-loop.html">Javascript: For Loop</a></li><br>
+              <li><a href="Javascript/while-loop.html">Javascript: While Loop</a></li><br>
+              <li><a href="Javascript/function1.html">Javascript: Function (1)</a></li><br>
+              <li><a href="Javascript/function2.html">Javascript: Function (2)</a></li><br>
+              <li><a href="Javascript/random-number.html">Javascript: Random Number</a></li><br>
+              <li><a href="Javascript/array.html">Javascript: Array</a></li><br>
+              <li><a href="Javascript/runtime.html">Javascript: Run Time</a></li><br>
+              <li><a href="Javascript/set-timeout.html">Javascript: Set Timeout</a></li><br>
+              <li><a href="Javascript/set-interval.html">Javascript: Set Interval</a></li><br>
+              <li><a href="Javascript/clear-interval.html">Javascript: Clear Interval</a></li><br>
+
             </ul>
           </div>
         </td>

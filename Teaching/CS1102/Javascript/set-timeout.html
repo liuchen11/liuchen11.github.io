@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head> <title>Set Timeout</title>
+	<script>
+		function init() {
+			document.getElementById("number").style = "font-size: 100px;";
+		}
+		function delay_dice () {
+			document.getElementById("dice").disabled = true;
+			setTimeout (throw_dice, 3000)
+		}
+		function throw_dice () {
+			var n;
+			n = Math.floor(Math.random() *6) + 1;
+			document.getElementById("number").innerHTML = n;
+			document.getElementById("dice").disabled = false;
+		}
+	</script>
+	<head>
+<body onload="init();">
+	<!-- Page content begins here -->
+	<h1>Javascript Button</h1>
+	<button id= "dice" onclick="delay_dice();">Throw Dice After 3 Seconds</button> <br/>
+	<div id= "number" ></divs>
+	<!-- Page content ends here -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head> <title>What day is it today</title>
+	<script type="text/javascript">
+		function init() {
+			var day;
+			day = new Date().getDay();
+			if (day == 0)
+				day = "Sunday";
+			else if (day == 1)
+				day = "Monday";
+			else if (day == 2)
+				day = "Tuesday";
+			else if (day == 3)
+				day = "Wednesday"
+			else if (day == 4)
+				day = "Thursday"
+			else if (day == 5)
+				day = "Friday";
+			else
+				day = "Saturday"
+			document.getElementById('day').innerHTML = day
+			alert ("Today is " + day)
+		}
+	</script>
+	</head>
+<body onload="init();">
+	Today is <span id="day"></span>.
+</body>
+</html>
