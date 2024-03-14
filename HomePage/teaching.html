@@ -5,16 +5,40 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/all.css"/>
     <link rel="author" href="https://plus.google.com/102799544779548851082/?rel=author"/>
     <meta charset="UTF-8">
+    <script>
+      var expand = {};
+      var display = {};
+
+      function init(){
+        document.getElementById("content-ge2340").style.display = "none";
+        document.getElementById("content-cs1102").style.display = "none";
+        expand = {'content-ge2340': false, 'content-cs1102': false};
+        display = {'content-ge2340': 'block', 'content-cs1102': 'block'};
+      }
+
+      function expandorhide(text_name, list_name){
+        var text = document.getElementById(text_name)
+        var list = document.getElementById(list_name)
+        if (list.style.display == "block" || list.style.display == "inline"){
+          display[list_name] = list.style.display;
+          list.style.display = "none";
+          text.innerHTML = "[click to display details]"
+        } else {
+          list.style.display = display[list_name];
+          text.innerHTML = "[click to hide details]";
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body onload="init();">
     <div class="content">
         <!-- <div class="nav-left">
             <a href="./index.html"><B style="font-size:25px">Chen Liu</B></a>
         </div> -->
         <div class="nav">
-            <!-- <a href="./index.html"><B style="font-size:20px">Home</B></a> &nbsp &nbsp  -->
-            <a href="./group.html"><B style="font-size:20px">MLO@CityU</B></a> &nbsp &nbsp 
+            <a href="./index.html"><B style="font-size:20px">Home</B></a> &nbsp &nbsp 
+            <a href="./group.html"><B style="font-size:20px">Group</B></a> &nbsp &nbsp 
             <B style="font-size:20px">Teaching</B> &nbsp &nbsp
             <a href="./publication.html"><B style="font-size:20px">Publications</B></a> &nbsp &nbsp
             <a href="./openings.html"><B style="font-size:20px">Open Positions</B></a> &nbsp &nbsp
@@ -31,10 +55,52 @@
                     <!-- <h3> Serve as Instructor </h3> -->
                     <ul>
                         <li>CS8659 at CityU HK: <b>Research in Computer Science. (co-lecturer)</b></li><br>
-                        <ul><li><a href="../Teaching/CS8695/2023Talk.pdf" target="_blank">My lecture entitled "Understanding and Building Reliable Deep Neural Networks".</a></li></ul>
-                        <li>GE2340 at CityU HK: <b>Artificial Intelligence: Past, Present, and Future.</b></li><br>
-                        <li>CS1102 at CityU HK: <b>Introduction to Computer Studies.</b></li><br>
-                        <ul><li><a href="../Teaching/CS1102/index.html" target="_blank">Demo code</a></li></ul>
+                        <ul>
+                            <li>Introductory course for Ph.D. students.</li><br>
+                            <li><a href="../Teaching/CS8695/2023Talk.pdf" target="_blank">My lecture entitled "Understanding and Building Reliable Deep Neural Networks".</a></li><br>
+                            <div></div>
+                        </ul>
+                        <li>GE2340 at CityU HK: <b>Artificial Intelligence: Past, Present, and Future. <a href="#" style="color:red;font-size:13px" onclick="expandorhide('click-ge2340', 'content-ge2340');"><span id="click-ge2340">[click to display details]</span></a></b></li><br>
+                        <ul>
+                            <li>Bachelor course for general education (GE).</li><br>
+                            <div id="content-ge2340">
+                            <li>Assessment - quiz 20%; group project 20%; midterm exam 20%; final exam 40%.</li><br>
+                            <li>Lecture content overview</li><br>
+                            <ol>
+                                <li>Mathematical Fundations of AI</li><br>
+                                <li>Linear Models</li><br>
+                                <li>Deep Learning</li><br>
+                                <li>Optimization in AI</li><br>
+                                <li>Generative Models</li><br>
+                                <li>AI Security, Privacy and Ethics</li><br>
+                                <li>Reinforcement Learning</li><br>
+                                <li>Computer Vision</li><br>
+                                <li>Natural Language Processing</li><br>
+                                <li>Recent Advances in AI</li>
+                            </ol>
+                            </div>
+                        </ul>
+                        <li>CS1102 at CityU HK: <b>Introduction to Computer Studies. <a href="#" style="color:red;font-size:13px" onclick="expandorhide('click-cs1102', 'content-cs1102');"><span id="click-cs1102">[click to display details]</span></a></b></li><br>
+                        <ul>
+                            <li>Bachelor course for non-CS students.</li><br>
+                            <li><a href="../Teaching/CS1102/index.html" target="_blank">Demo code</a></li><br>
+                            <div id="content-cs1102">
+                            <li>Assessment - quiz 20%; group project 20%; midterm exam 24%; final exam 36%.</li><br>
+                            <li>Lecture content overview</li><br>
+                            <ol>
+                                <li>Binary Number System</li><br>
+                                <li>Boolean Logic, Conditionals and Loops</li><br>
+                                <li>HTML, CSS and Javascript</li><br>
+                                <li>Hardware and Computer System</li><br>
+                                <li>Computer Network</li><br>
+                                <li>Operating Systems</li><br>
+                                <li>Safety, Privacy and Ethics</li><br>
+                                <li>Artificial Intelligence</li><br>
+                                <li>Digital Media</li>
+                            </ol>
+                            <li>Scratch and Javascript are taught in the lab sessions.</li>
+                            </div>
+                        </ul>
                     </ul>
                     <!-- <h3> Serve as Teaching Assistant </h3>
                     <ul>
