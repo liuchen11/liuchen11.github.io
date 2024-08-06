@@ -64,6 +64,38 @@
           <h2 style="margin-bottom:-10px">Preprints</h2>
           <table width="100%" border="0" align="center">
             <tr>
+              <td width="80%" onMouseover="displayDetail('preprint-detail-4');" onmouseleave="hideDetail('preprint-detail-4');">
+                <p class="line"><h4>Controlling the Fidelity and Diversity of Deep Generative Models via Pseudo Density</h4></p>
+                <p class="line">Shuangqi Li, <u>Chen Liu</u>, Tong Zhang, Hieu Le, Sabine Süsstrunk, Mathieu Salzmann.</p>
+                <p class="line">
+                  <div class="highlight">
+                    <a href="./BiasDGM/BiasDGM_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="preprint-detail-4" onMouseover="displayDetail('preprint-detail-4');" onmouseleave="hideDetail('preprint-detail-4');">
+              <td width="100%">
+                <h4 class="detail"> We introduce an approach to bias deep generative models, such as GANs and diffusion models, towards generating data with either enhanced fidelity or increased diversity. Our approach involves manipulating the distribution of training and generated data through a novel metric for individual samples, named pseudo density, which is based on the nearest-neighbor information from real samples. Our approach offers three distinct techniques to adjust the fidelity and diversity of deep generative models: 1) Per-sample perturbation, enabling precise adjustments for individual samples towards either more common or more unique characteristics; 2) Importance sampling during model inference to enhance either fidelity or diversity in the generated data; 3) Fine-tuning with importance sampling, which guides the generative model to learn an adjusted distribution, thus controlling fidelity and diversity. Furthermore, our fine-tuning method demonstrates the ability to improve the Frechet Inception Distance (FID) for pre-trained generative models with minimal iterations. </h4>
+              </td>
+            </tr>
+            <tr>
+              <td width="80%" onMouseover="displayDetail('preprint-detail-3');" onmouseleave="hideDetail('preprint-detail-3');">
+                <p class="line"><h4>Differentially Private Neural Network Training under Hidden State Assumption</h4></p>
+                <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
+                <p class="line">
+                  <div class="highlight">
+                    <a href="./DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="preprint-detail-3" onMouseover="displayDetail('preprint-detail-3');" onmouseleave="hideDetail('preprint-detail-3');">
+              <td width="100%">
+                <h4 class="detail"> We present a novel approach called differentially private stochastic block coordinate descent (DP-SBCD) for training neural networks with provable guarantees of differential privacy under the hidden state assumption. Our methodology incorporates Lipschitz neural networks and decomposes the training process of the neural network into sub-problems, each corresponding to the training of a specific layer. By doing so, we extend the analysis of differential privacy under the hidden state assumption to encompass non-convex problems and algorithms employing proximal gradient descent. Furthermore, in contrast to existing methods, we adopt a novel approach by utilizing calibrated noise sampled from adaptive distributions, yielding improved empirical trade-offs between utility and privacy. </h4>
+              </td>
+            </tr>
+            <tr>
               <td width="80%" onMouseover="displayDetail('preprint-detail-2');" onmouseleave="hideDetail('preprint-detail-2');">
                 <p class="line"><h4>Towards Mitigating Architecture Overfitting in Dataset Distillation</h4></p>
                 <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
@@ -108,7 +140,10 @@
                 <p class="line">
                   <div class="highlight">
                     <a href="doc/SparsePGD/SparsePGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
-                    <a href="https://github.com/CityU-MLO/sPGD" target="_blank" style="color:red;">[Code]</a>
+                    <a href="https://www.youtube.com/watch?v=tvFTPL7n_CQ" target="_blank" style="color:red;">[Video]</a> &nbsp
+                    <a href="doc/SparsePGD/SparsePGD_Poster.pdf" target="_blank" style="color:red;">[Poster]</a> &nbsp
+                    <a href="doc/SparsePGD/SparsePGD_Slides.pdf" target="_blank" style="color:red;">[Slides]</a> &nbsp
+                    <a href="https://github.com/CityU-MLO/sPGD" target="_blank" style="color:red;">[Code]</a> 
                   </div>
                 </p>
               </td>
