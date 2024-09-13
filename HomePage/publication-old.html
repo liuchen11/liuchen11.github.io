@@ -17,14 +17,11 @@
         document.getElementById(id).style.display = "none";
       }
 
-      var display = {};
-
       function init() {
         var message = "";
         try{
           for (var i = 1; ; i++) {
             document.getElementById("pub-detail-" + String(i)).style.display = "none";
-            display["pub-detail-" + String(i)] = "block";
           }
         }catch(err){
           message += err.message;
@@ -32,26 +29,11 @@
         try{
           for (var i = 1; ; i++) {
             document.getElementById("preprint-detail-" + String(i)).style.display = "none";
-            display["preprint-detail-" + String(i)] = "block";
           }
         }catch(err){
           message += err.message;
         }
       }
-
-      function expandorhide(text_name, list_name){
-        var text = document.getElementById(text_name)
-        var list = document.getElementById(list_name)
-        if (list.style.display == "block" || list.style.display == "inline"){
-          display[list_name] = list.style.display;
-          list.style.display = "none";
-          text.innerHTML = "[Abstract]"
-        } else {
-          list.style.display = display[list_name];
-          text.innerHTML = "[Hide Abstract]";
-        }
-      }
-
     </script>
   </head>
 
@@ -82,53 +64,50 @@
           <h2 style="margin-bottom:-10px">Preprints</h2>
           <table width="100%" border="0" align="center">
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('preprint-detail-3');" onmouseleave="hideDetail('preprint-detail-3');">
                 <p class="line"><h4>Differentially Private Neural Network Training under Hidden State Assumption</h4></p>
                 <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
                     <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-3">
+            <tr id="preprint-detail-3" onMouseover="displayDetail('preprint-detail-3');" onmouseleave="hideDetail('preprint-detail-3');">
               <td width="100%">
                 <h4 class="detail"> We present a novel approach called differentially private stochastic block coordinate descent (DP-SBCD) for training neural networks with provable guarantees of differential privacy under the hidden state assumption. Our methodology incorporates Lipschitz neural networks and decomposes the training process of the neural network into sub-problems, each corresponding to the training of a specific layer. By doing so, we extend the analysis of differential privacy under the hidden state assumption to encompass non-convex problems and algorithms employing proximal gradient descent. Furthermore, in contrast to existing methods, we adopt a novel approach by utilizing calibrated noise sampled from adaptive distributions, yielding improved empirical trade-offs between utility and privacy. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('preprint-detail-2');" onmouseleave="hideDetail('preprint-detail-2');">
                 <p class="line"><h4>Towards Mitigating Architecture Overfitting in Dataset Distillation</h4></p>
                 <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
                     <a href="doc/DataDistillationArchOverfit/DataDistillationArchOverfit_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-2">
+            <tr id="preprint-detail-2" onMouseover="displayDetail('preprint-detail-2');" onmouseleave="hideDetail('preprint-detail-2');">
               <td width="100%">
                 <h4 class="detail"> Dataset distillation methods have demonstrated remarkable performance for neural networks trained with very limited training data. However, a significant challenge arises in the form of architecture overfitting: the distilled training data synthesized by a specific network architecture (i.e., training network) generates poor performance when trained by other network architectures (i.e., test networks). This paper addresses this issue and proposes a series of approaches in both architecture designs and training schemes which can be adopted together to boost the generalization performance across different network architectures on the distilled training data. We conduct extensive experiments to demonstrate the effectiveness and generality of our methods. Particularly, across various scenarios involving different sizes of distilled data, our approaches achieve comparable or superior performance to existing methods when training on the distilled data using networks with larger capacities. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('preprint-detail-1');" onmouseleave="hideDetail('preprint-detail-1');">
                 <p class="line"><h4>On the Impact of Hard Adversarial Instances on Overfitting in Adversarial Training</h4></p>
                 <p class="line"><u>Chen Liu</u>, Zhichao Huang, Mathieu Salzmann, Tong Zhang, Sabine Süsstrunk.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-1', 'preprint-detail-1');"><span id="click-preprint-detail-1">[Abstract]</span></text> &nbsp
                     <a href="doc/HardAdversarialInstances/HardAdversarialInstances_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="doc/HardAdversarialInstances/HardAdversarialInstances_Slides.pdf" target="_blank" style="color:red">[Slides]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-1">
+            <tr id="preprint-detail-1" onMouseover="displayDetail('preprint-detail-1');" onmouseleave="hideDetail('preprint-detail-1');">
               <td width="100%">
                 <h4 class="detail"> Adversarial training is a popular method to robustify models against adversarial attacks. However, it exhibits much more severe overfitting than training on clean inputs. In this work, we investigate this phenomenon from the perspective of training instances, i.e., training input-target pairs. Based on a quantitative metric measuring instances’ difficulty, we analyze the model's behavior on training instances of different difficulty levels. This lets us show that the decay in generalization performance of adversarial training is a result of the model's attempt to fit hard adversarial instances. We theoretically verify our observations for both linear and general nonlinear models, proving that models trained on hard instances have worse generalization performance than ones trained on easy instances. Furthermore, we prove that the difference in the generalization gap between models trained by instances of different difficulty levels increases with the size of the adversarial budget. Finally, we conduct case studies on methods mitigating adversarial overfitting in several scenarios. Our analysis shows that methods successfully mitigating adversarial overfitting all avoid fitting hard adversarial instances, while ones fitting hard adversarial instances do not achieve true robustness. </h4>
               </td>
@@ -138,31 +117,29 @@
           <h2 style="margin-bottom:-10px">Refereed Papers</h2>
           <table width="100%" border="0" align="center">
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-10');" onmouseleave="hideDetail('pub-detail-10');">
                 <p class="line"><h4>Controlling the Fidelity and Diversity of Deep Generative Models via Pseudo Density</h4></p>
                 <p class="line">Shuangqi Li, <u>Chen Liu</u>, Tong Zhang, Hieu Le, Sabine Süsstrunk, Mathieu Salzmann.</p>
                 <p class="line"><I>Transactions on Machine Learning Research (TMLR) 2024.</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-10', 'pub-detail-10');"><span id="click-pub-detail-10">[Abstract]</span></text> &nbsp
                     <a href="doc/BiasDGM/BiasDGM_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="pub-detail-10">
+            <tr id="pub-detail-10" onMouseover="displayDetail('pub-detail-10');" onmouseleave="hideDetail('pub-detail-10');">
               <td width="100%">
                 <h4 class="detail"> We introduce an approach to bias deep generative models, such as GANs and diffusion models, towards generating data with either enhanced fidelity or increased diversity. Our approach involves manipulating the distribution of training and generated data through a novel metric for individual samples, named pseudo density, which is based on the nearest-neighbor information from real samples. Our approach offers three distinct techniques to adjust the fidelity and diversity of deep generative models: 1) Per-sample perturbation, enabling precise adjustments for individual samples towards either more common or more unique characteristics; 2) Importance sampling during model inference to enhance either fidelity or diversity in the generated data; 3) Fine-tuning with importance sampling, which guides the generative model to learn an adjusted distribution, thus controlling fidelity and diversity. Furthermore, our fine-tuning method demonstrates the ability to improve the Frechet Inception Distance (FID) for pre-trained generative models with minimal iterations. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-9');" onmouseleave="hideDetail('pub-detail-9');">
                 <p class="line"><h4>Towards Efficient Training and Evaluation of Robust Models against $l_0$ Bounded Adversarial Perturbations</h4></p>
                 <p class="line">Xuyang Zhong, Yixiao Huang, <u>Chen Liu</u></p>
                 <p class="line"><I>International Conference on Machine Learning (ICML) 2024.</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-9', 'pub-detail-9');"><span id="click-pub-detail-9">[Abstract]</span></text> &nbsp
                     <a href="doc/SparsePGD/SparsePGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://www.youtube.com/watch?v=tvFTPL7n_CQ" target="_blank" style="color:red;">[Video]</a> &nbsp
                     <a href="doc/SparsePGD/SparsePGD_Poster.pdf" target="_blank" style="color:red;">[Poster]</a> &nbsp
@@ -172,38 +149,36 @@
                 </p>
               </td>
             </tr>
-            <tr id="pub-detail-9">
+            <tr id="pub-detail-9" onMouseover="displayDetail('pub-detail-9');" onmouseleave="hideDetail('pub-detail-9');">
               <td width="100%">
                 <h4 class="detail"> This work studies sparse adversarial perturbations bounded by l0 norm. We propose a white-box PGD-like attack method named sparse-PGD to effectively and efficiently generate such perturbations. Furthermore, we combine sparse-PGD with a black-box attack to comprehensively and more reliably evaluate the models' robustness against l0 bounded adversarial perturbations. Moreover, the efficiency of sparse-PGD enables us to conduct adversarial training to build robust models against sparse perturbations. Extensive experiments demonstrate that our proposed attack algorithm exhibits strong performance in different scenarios. More importantly, compared with other robust models, our adversarially trained model demonstrates state-of-the-art robustness against various sparse attacks. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-8');" onmouseleave="hideDetail('pub-detail-8');">
                 <p class="line"><h4>Fast Adversarial Training with Adaptive Step Size</h4></p>
                 <p class="line">Zhichao Huang, Yanbo Fan, <u>Chen Liu</u>, Weizhong Zhang, Yong Zhang, Mathieu Salzmann, Sabine Süsstrunk, Jue Wang</p>
                 <p class="line"><I>IEEE Transactions on Image Processing 2023.</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-8', 'pub-detail-8');"><span id="click-pub-detail-8">[Abstract]</span></text> &nbsp
                     <a href="doc/FastAdaptiveStepSize/FastAdaptiveStepSize.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://github.com/HuangZhiChao95/ATAS" target="_blank" style="color:red">[Code]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="pub-detail-8">
+            <tr id="pub-detail-8" onMouseover="displayDetail('pub-detail-8');" onmouseleave="hideDetail('pub-detail-8');">
               <td width="100%">
                 <h4 class="detail"> While adversarial training and its variants have shown to be the most effective algorithms to defend against adversarial attacks, their extremely slow training process makes it hard to scale to large datasets like ImageNet. The key idea of recent works to accelerate adversarial training is to substitute multi-step attacks (e.g., PGD) with single-step attacks (e.g., FGSM). However, these single-step methods suffer from catastrophic overfitting, where the accuracy against PGD attack suddenly drops to nearly 0% during training, and the network totally loses its robustness. In this work, we study the phenomenon from the perspective of training instances. We show that catastrophic overfitting is instance-dependent, and fitting instances with larger input gradient norm is more likely to cause catastrophic overfitting. Based on our findings, we propose a simple but effective method, Adversarial Training with Adaptive Step size (ATAS). ATAS learns an instance-wise adaptive step size that is inversely proportional to its gradient norm. Our theoretical analysis shows that ATAS converges faster than the commonly adopted non- adaptive counterparts. Empirically, ATAS consistently mitigates catastrophic overfitting and achieves higher robust accuracy on CIFAR10, CIFAR100, and ImageNet when evaluated on various adversarial budgets. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-7');" onmouseleave="hideDetail('pub-detail-7');">
                 <p class="line"><h4>Towards Stable and Efficient Adversarial Training against $l_1$ Bounded Adversarial Attacks</h4></p>
                 <p class="line">Yulun Jiang<sup>*</sup>, <u>Chen Liu</u><sup>*</sup>, Zhichao Huang, Mathieu Salzmann, Sabine Süsstrunk</p>
                 <p class="line"><I>International Conference on Machine Learning (ICML) 2023</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-7', 'pub-detail-7');"><span id="click-pub-detail-7">[Abstract]</span></text> &nbsp
                     <a href="doc/FastAdvL1/FastAdvL1_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://icml.cc/virtual/2023/poster/23902" target="_blank" style="color:red">[Video]</a> &nbsp
                     <a href="doc/FastAdvL1/FastAdvL1_Poster" target="_blank" style="color:red">[Poster]</a> &nbsp
@@ -213,19 +188,18 @@
                 </p>
               </td>
             </tr>
-            <tr id="pub-detail-7">
+            <tr id="pub-detail-7" onMouseover="displayDetail('pub-detail-7');" onmouseleave="hideDetail('pub-detail-7');">
               <td width="100%">
                 <h4 class="detail"> We address the problem of stably and efficiently training a deep neural network robust to adversarial perturbations bounded by an l1 norm. We demonstrate that achieving robustness against l1-bounded perturbations is more challenging than in the l2 or l∞ cases, because adversarial training against l1-bounded perturbations is more likely to suffer from catastrophic overfitting and yield training instabilities. Our analysis links these issues to the coordinate descent strategy used in existing methods. We address this by introducing Fast-EG-l1, an efficient adversarial training algorithm based on Euclidean geometry and free of coordinate descent. Fast-EG-l1 comes with no additional memory costs and no extra hyper-parameters to tune. Our experimental results on various datasets demonstrate that Fast-EG-l1 yields the best and most stable robustness against l1-bounded adversarial attacks among the methods of comparable computational complexity. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-6');" onmouseleave="hideDetail('pub-detail-6');">
                 <p class="line"><h4>Robust Binary Models by Pruning Randomly-initialized Networks</h4></p>
                 <p class="line"><u>Chen Liu</u><sup>*</sup>, Ziqi Zhao<sup>*</sup>, Sabine Süsstrunk, Mathieu Salzmann.</p>
                 <p class="line"><I>Advances in Neural Information Processing Systems (NeurIPS) 2022</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-6', 'pub-detail-6');"><span id="click-pub-detail-6">[Abstract]</span></text> &nbsp
                     <a href="doc/RandomPrune/RandomPrune_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://nips.cc/virtual/2022/poster/54142" target="_blank" style="color:red">[Video]</a> &nbsp
                     <a href="doc/RandomPrune/RandomPrune_Poster.pdf" target="_blank" style="color:red">[Poster]</a> &nbsp
@@ -235,19 +209,18 @@
                 </p>
               </td>
             </tr>
-            <tr id="pub-detail-6">
+            <tr id="pub-detail-6" onMouseover="displayDetail('pub-detail-6');" onmouseleave="hideDetail('pub-detail-6');">
               <td width="100%">
                 <h4 class="detail"> Robustness to adversarial attacks was shown to require a larger model capacity, and thus a larger memory footprint. In this paper, we introduce an approach to obtain robust yet compact models by pruning randomly-initialized binary networks. Unlike adversarial training, which learns the model parameters, we initialize the model parameters as either +1 or −1, keep them fixed, and find a subnetwork structure that is robust to attacks. Our method confirms the Strong Lottery Ticket Hypothesis in the presence of adversarial attacks, and extends this to binary networks. Furthermore, it yields more compact networks with competitive performance than existing works by 1) adaptively pruning different network layers; 2) exploiting an effective binary initialization scheme; 3) incorporating a last batch normalization layer to improve training stability. Our experiments demonstrate that our approach not only always outperforms the state-of-the-art robust binary networks, but also can achieve accuracy better than full-precision ones on some datasets. Finally, we show the structured patterns of our pruned binary networks. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-5');" onmouseleave="hideDetail('pub-detail-5');">
                 <p class="line"><h4>Training Provably Robust Models by Polyhedral Envelope Regularization</h4></p>                  
                 <p class="line"><u>Chen Liu</u>, Mathieu Salzmann, Sabine Süsstrunk.</p>                  
                 <p class="line"><I>IEEE Transactions on Neural Networks and Learning Systems 2021.</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-5', 'pub-detail-5');"><span id="click-pub-detail-5">[Abstract]</span></text> &nbsp
                     <a href="doc/PolyhedralEnvelope/PolyhedralEnvelope_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="doc/PolyhedralEnvelope/PolyhedralEnvelope_Slides.pdf" target="_blank" style="color:red">[Slides]</a> &nbsp
                     <a href="https://github.com/liuchen11/PolyEnvelope" target="_blank" style="color:red">[Code]</a>
@@ -256,20 +229,19 @@
               </td>
               <td width="20%"></td>
             </tr>
-            <tr id="pub-detail-5">
+            <tr id="pub-detail-5" onMouseover="displayDetail('pub-detail-5');" onmouseleave="hideDetail('pub-detail-5');">
               <td width="100%">
                 <h4 class="detail">Training certifiable neural networks enables us to obtain models with robustness guarantees against adversarial attacks. In this work, we introduce a framework to obtain a provable adversarial-free region in the neighborhood of the input data by a polyhedral envelope, which yields more fine-grained certified robustness than existing methods. We further introduce polyhedral envelope regularization (PER) to encourage larger adversarial-free regions and thus improve the provable robustness of the models. We demonstrate the flexibility and effectiveness of our framework on standard benchmarks; it applies to networks of different architectures and with general activation functions. Compared with state of the art, PER has negligible computational overhead; it achieves better robustness guarantees and accuracy on the clean data in various settings</h4>
               </td>
             </tr>
             <tr>
               <!-- <td width="35%"><img src="doc/AdversaryLossLandscape/AdversaryLossLandscape_Demo.png" width="320px" height="160px"/></td> -->
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-4');" onmouseleave="hideDetail('pub-detail-4');">
                 <p class="line"><h4>On the Loss Landscape of Adversarial Training: Identifying Challenges and How to Overcome Them</h4></p>
                 <p class="line"><u>Chen Liu</u>, Mathieu Salzmann, Tao Lin, Ryota Tomioka, Sabine Süsstrunk.</p>
                 <p class="line"><I>Advances in Neural Information Processing Systems (NeurIPS) 2020.</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-4', 'pub-detail-4');"><span id="click-pub-detail-4">[Abstract]</span></text> &nbsp
                     <a href="doc/AdversaryLossLandscape/AdversaryLossLandscape_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://nips.cc/virtual/2020/protected/poster_f56d8183992b6c54c92c16a8519a6e2b.html" target="_blank" style="color:red">[Video]</a> &nbsp
                     <a href="doc/AdversaryLossLandscape/AdversaryLossLandscape_Poster.pdf" target="_blank" style="color:red">[Poster]</a> &nbsp
@@ -280,20 +252,19 @@
               </td>
               <td width="20%"></td>
             </tr>
-            <tr id="pub-detail-4">
+            <tr id="pub-detail-4" onMouseover="displayDetail('pub-detail-4');" onmouseleave="hideDetail('pub-detail-4');">
               <td width="100%">
                 <h4 class="detail"> We analyze the influence of adversarial training on the loss landscape of machine learning models. To this end, we first provide analytical studies of the properties of adversarial loss functions under different adversarial budgets. We then demonstrate that the adversarial loss landscape is less favorable to optimization, due to increased curvature and more scattered gradients. Our conclusions are validated by numerical analyses, which show that training under large adversarial budgets impede the escape from suboptimal random initialization, cause non-vanishing gradients and make the model find sharper minima. Based on these observations, we show that a periodic adversarial scheduling (PAS) strategy can effectively overcome these challenges, yielding better results than vanilla adversarial training while being much less sensitive to the choice of learning rate. </h4>
               </td>
             </tr>
             <tr>
               <!-- <td width="35%"><img src="doc/CertifyNonUniformBounds/CertifyNonUniformBounds_Demo.jpg" width="320px" height="160px"/></td> -->
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-3');" onmouseleave="hideDetail('pub-detail-3');">
                 <p class="line"><h4>On Certifying Non-uniform Bounds against Adversarial Attacks</h4></p>
                 <p class="line"><u>Chen Liu</u>, Ryota Tomioka, Volkan Cevher.</p>
                 <p class="line"><I>International Conference on Machine Learning (ICML) 2019.</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-3', 'pub-detail-3');"><span id="click-pub-detail-3">[Abstract]</span></text> &nbsp
                     <a href="doc/CertifyNonUniformBounds/CertifyNonUniformBounds_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://www.videoken.com/embed/1zMVZKlxfU4?tocitem=29" target="_blank" style="color:red">[Video]</a> &nbsp
                     <a href="doc/CertifyNonUniformBounds/CertifyNonUniformBounds_Poster.pdf" target="_blank" style="color:red">[Poster]</a> &nbsp
@@ -304,20 +275,19 @@
               </td>
               <td width="20%"></td>
             </tr>
-            <tr id="pub-detail-3">
+            <tr id="pub-detail-3" onMouseover="displayDetail('pub-detail-3');" onmouseleave="hideDetail('pub-detail-3');">
               <td width="100%">
                 <h4 class="detail"> This work studies the robustness certification problem of neural network models, which aims to find certified adversary-free regions as large as possible around data points. In contrast to the existing approaches that seek regions bounded uniformly along all input features, we consider non-uniform bounds and use it to study the decision boundary of neural network models. We formulate our target as an optimization problem with nonlinear constraints. Then, a framework applicable for general feedforward neural networks is proposed to bound the output logits so that the relaxed problem can be solved by the augmented Lagrangian method. Our experiments show the non-uniform bounds have larger volumes than uniform ones and the geometric similarity of the non-uniform bounds gives a quantitative, data- agnostic metric of input features' robustness. Further, compared with normal models, the robust models have even larger non-uniform bounds and better interpretability. </h4>
               </td>
             </tr>
             <tr>
               <!-- <td width="35%"><img src="doc/MirrorGAN/MirrorGAN_Demo.gif" width="320px" height="160px"/></td> -->
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-2');" onmouseleave="hideDetail('pub-detail-2');">
                 <p class="line"><h4>Finding Mixed Nash Equilibria of Generative Adversarial Networks</h4></p>
                 <p class="line">Ya-Ping Hsieh, <u>Chen Liu</u>, Volkan Cevher.</p>
                 <p class="line"><I>International Conference on Machine Learning (ICML) 2019.</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-2', 'pub-detail-2');"><span id="click-pub-detail-2">[Abstract]</span></text> &nbsp
                     <a href="doc/MirrorGAN/MirrorGAN_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://videoken.com/embed/n5e2qNQ-h6E?tocitem=44" target="_blank" style="color:red">[Video]</a> &nbsp
                     <a href="doc/MirrorGAN/MirrorGAN_Poster.pdf" target="_blank" style="color:red">[Poster]</a> &nbsp
@@ -327,19 +297,18 @@
               </td>
               <td width="20%"></td>
             </tr>
-            <tr id="pub-detail-2">
+            <tr id="pub-detail-2" onMouseover="displayDetail('pub-detail-2');" onmouseleave="hideDetail('pub-detail-2');">
               <td width="100%">
                 <h4 class="detail"> Generative adversarial networks (GANs) are known to achieve the state-of-the-art performance on various generative tasks, but these results come at the expense of a notoriously difficult training phase. Current training strategies typically draw a connection to optimization theory, whose scope is restricted to local convergence due to the presence of non-convexity. In this work, we tackle the training of GANs by rethinking the problem formulation from the mixed Nash Equilibria (NE) perspective. Via a classical lifting trick, we show that essentially all existing GAN objectives can be relaxed into their mixed strategy forms, whose global optima can be solved via sampling, in contrast to the exclusive use of optimization framework in previous work. We further propose a mean-approximation sampling scheme, which allows to systematically exploit methods for bi-affine games to delineate novel, practical training algorithms of GANs. Finally, we provide experimental evidence that our approach yields comparable or superior results to contemporary training algorithms, and outperforms classical methods such as SGD, Adam, and RMSProp. </h4>
               </td>
             </tr>
             <tr>
-              <td width="80%">
+              <td width="80%" onMouseover="displayDetail('pub-detail-1');" onmouseleave="hideDetail('pub-detail-1');">
                 <p class="line"><h4>Consistent 3D Rendering in Medical Imaging</h4></p>
                 <p class="line"><u>Chen Liu</u>, Shun Miao, Kaloian Petkov, Sandra Sudarsky, Daphne Yu, Tommaso Mansi.</p>
                 <p class="line"><I>European Patent No. 18160956.1</I></p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-1', 'pub-detail-1');"><span id="click-pub-detail-1">[Abstract]</span></text> &nbsp
                     <a href="doc/Consistent3DRender/Consistent3DRender_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
                     <a href="https://data.epo.org/publication-server/rest/v1.0/publication-dates/20180912/patents/EP3373245NWA2/document.pdf" target="_blank" style="color:red">[Metadata@EPO]</a>
                   </div>
@@ -347,7 +316,7 @@
               </td>
               <td width="20%"></td>
             </tr>
-            <tr id="pub-detail-1">
+            <tr id="pub-detail-1" onMouseover="displayDetail('pub-detail-1');" onmouseleave="hideDetail('pub-detail-1');">
               <td width="100%">
                 <h4 class="detail"> For three-dimensional rendering, a machine-learnt model is trained to generate representation vectors for rendered images formed with different rendering parameter settings. The distances between representation vectors of the images to a reference are used to select the rendered image and corresponding rendering parameters that provides a consistency with the reference. In an additional or different embodiment, optimized pseudorandom sequences are used for physically-based rendering. The random number generator seed is selected to improve the convergence speed of the renderer and to provide higher quality images, such as providing images more rapidly for training compared to using non-optimized seed selection.</h4>
               </td>
