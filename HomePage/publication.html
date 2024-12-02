@@ -87,13 +87,13 @@
                 <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
                     <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-3">
+            <tr id="preprint-detail-2">
               <td width="100%">
                 <h4 class="detail"> We present a novel approach called differentially private stochastic block coordinate descent (DP-SBCD) for training neural networks with provable guarantees of differential privacy under the hidden state assumption. Our methodology incorporates Lipschitz neural networks and decomposes the training process of the neural network into sub-problems, each corresponding to the training of a specific layer. By doing so, we extend the analysis of differential privacy under the hidden state assumption to encompass non-convex problems and algorithms employing proximal gradient descent. Furthermore, in contrast to existing methods, we adopt a novel approach by utilizing calibrated noise sampled from adaptive distributions, yielding improved empirical trade-offs between utility and privacy. </h4>
               </td>
@@ -104,39 +104,40 @@
                 <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-1', 'preprint-detail-1');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
                     <a href="doc/DataDistillationArchOverfit/DataDistillationArchOverfit_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
-                  </div>
-                </p>
-              </td>
-            </tr>
-            <tr id="preprint-detail-2">
-              <td width="100%">
-                <h4 class="detail"> Dataset distillation methods have demonstrated remarkable performance for neural networks trained with very limited training data. However, a significant challenge arises in the form of architecture overfitting: the distilled training data synthesized by a specific network architecture (i.e., training network) generates poor performance when trained by other network architectures (i.e., test networks). This paper addresses this issue and proposes a series of approaches in both architecture designs and training schemes which can be adopted together to boost the generalization performance across different network architectures on the distilled training data. We conduct extensive experiments to demonstrate the effectiveness and generality of our methods. Particularly, across various scenarios involving different sizes of distilled data, our approaches achieve comparable or superior performance to existing methods when training on the distilled data using networks with larger capacities. </h4>
-              </td>
-            </tr>
-            <tr>
-              <td width="80%">
-                <p class="line"><h4>On the Impact of Hard Adversarial Instances on Overfitting in Adversarial Training</h4></p>
-                <p class="line"><u>Chen Liu</u>, Zhichao Huang, Mathieu Salzmann, Tong Zhang, Sabine Süsstrunk.</p>
-                <p class="line">
-                  <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-1', 'preprint-detail-1');"><span id="click-preprint-detail-1">[Abstract]</span></text> &nbsp
-                    <a href="doc/HardAdversarialInstances/HardAdversarialInstances_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
-                    <a href="doc/HardAdversarialInstances/HardAdversarialInstances_Slides.pdf" target="_blank" style="color:red">[Slides]</a>
                   </div>
                 </p>
               </td>
             </tr>
             <tr id="preprint-detail-1">
               <td width="100%">
-                <h4 class="detail"> Adversarial training is a popular method to robustify models against adversarial attacks. However, it exhibits much more severe overfitting than training on clean inputs. In this work, we investigate this phenomenon from the perspective of training instances, i.e., training input-target pairs. Based on a quantitative metric measuring instances’ difficulty, we analyze the model's behavior on training instances of different difficulty levels. This lets us show that the decay in generalization performance of adversarial training is a result of the model's attempt to fit hard adversarial instances. We theoretically verify our observations for both linear and general nonlinear models, proving that models trained on hard instances have worse generalization performance than ones trained on easy instances. Furthermore, we prove that the difference in the generalization gap between models trained by instances of different difficulty levels increases with the size of the adversarial budget. Finally, we conduct case studies on methods mitigating adversarial overfitting in several scenarios. Our analysis shows that methods successfully mitigating adversarial overfitting all avoid fitting hard adversarial instances, while ones fitting hard adversarial instances do not achieve true robustness. </h4>
+                <h4 class="detail"> Dataset distillation methods have demonstrated remarkable performance for neural networks trained with very limited training data. However, a significant challenge arises in the form of architecture overfitting: the distilled training data synthesized by a specific network architecture (i.e., training network) generates poor performance when trained by other network architectures (i.e., test networks). This paper addresses this issue and proposes a series of approaches in both architecture designs and training schemes which can be adopted together to boost the generalization performance across different network architectures on the distilled training data. We conduct extensive experiments to demonstrate the effectiveness and generality of our methods. Particularly, across various scenarios involving different sizes of distilled data, our approaches achieve comparable or superior performance to existing methods when training on the distilled data using networks with larger capacities. </h4>
               </td>
             </tr>
           </table>
 
           <h2 style="margin-bottom:-10px">Refereed Papers</h2>
           <table width="100%" border="0" align="center">
+            <tr>
+              <td width="80%">
+                <p class="line"><h4>On the Impact of Hard Adversarial Instances on Overfitting in Adversarial Training</h4></p>
+                <p class="line"><u>Chen Liu</u>, Zhichao Huang, Mathieu Salzmann, Tong Zhang, Sabine Süsstrunk.</p>
+                <p class="line"><I>Journal of Machine Learning Research (JMLR) 2024</I></p>
+                <p class="line">
+                  <div class="highlight">
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-12', 'pub-detail-12');"><span id="click-pub-detail-12">[Abstract]</span></text> &nbsp
+                    <a href="." target="_blank" style="color:red">[Full Version to Appear]</a> &nbsp
+                    <a href="doc/HardAdversarialInstances/HardAdversarialInstances_Slides.pdf" target="_blank" style="color:red">[Slides]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="pub-detail-12">
+              <td width="100%">
+                <h4 class="detail"> Adversarial training is a popular method to robustify models against adversarial attacks. However, it exhibits much more severe overfitting than training on clean inputs. In this work, we investigate this phenomenon from the perspective of training instances, i.e., training input-target pairs. Based on a quantitative metric measuring instances’ difficulty, we analyze the model's behavior on training instances of different difficulty levels. This lets us show that the decay in generalization performance of adversarial training is a result of the model's attempt to fit hard adversarial instances. We theoretically verify our observations for both linear and general nonlinear models, proving that models trained on hard instances have worse generalization performance than ones trained on easy instances. Furthermore, we prove that the difference in the generalization gap between models trained by instances of different difficulty levels increases with the size of the adversarial budget. Finally, we conduct case studies on methods mitigating adversarial overfitting in several scenarios. Our analysis shows that methods successfully mitigating adversarial overfitting all avoid fitting hard adversarial instances, while ones fitting hard adversarial instances do not achieve true robustness. </h4>
+              </td>
+            </tr>
             <tr>
               <td width="80%">
                 <p class="line"><h4>Mixture of Adversarial LoRAs: Boosting Robust Generalization in Meta-tuning</h4></p>
