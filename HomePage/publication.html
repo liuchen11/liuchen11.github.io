@@ -83,42 +83,60 @@
           <table width="100%" border="0" align="center">
             <tr>
               <td width="80%">
-                <p class="line"><h4>Differentially Private Neural Network Training under Hidden State Assumption</h4></p>
-                <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
+                <p class="line"><h4>Sparse-PGD: A Unified Framework for Sparse Adversarial Perturbations Generation</h4></p>
+                <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
-                    <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
+                    <a href="doc/SPGD/SPGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
             <tr id="preprint-detail-2">
               <td width="100%">
-                <h4 class="detail"> We present a novel approach called differentially private stochastic block coordinate descent (DP-SBCD) for training neural networks with provable guarantees of differential privacy under the hidden state assumption. Our methodology incorporates Lipschitz neural networks and decomposes the training process of the neural network into sub-problems, each corresponding to the training of a specific layer. By doing so, we extend the analysis of differential privacy under the hidden state assumption to encompass non-convex problems and algorithms employing proximal gradient descent. Furthermore, in contrast to existing methods, we adopt a novel approach by utilizing calibrated noise sampled from adaptive distributions, yielding improved empirical trade-offs between utility and privacy. </h4>
+                <h4 class="detail"> This work studies sparse adversarial perturbations, including both unstructured and structured ones. We propose a framework based on a white-box PGD-like attack method named Sparse-PGD to effectively and efficiently generate such perturbations. Furthermore, we combine Sparse-PGD with a black-box attack to comprehensively and more reliably evaluate the models' robustness against unstructured and structured sparse adversarial perturbations. Moreover, the efficiency of Sparse-PGD enables us to conduct adversarial training to build robust models against various sparse perturbations. Extensive experiments demonstrate that our proposed attack algorithm exhibits strong performance in different scenarios. More importantly, compared with other robust models, our adversarially trained model demonstrates state-of-the-art robustness against various sparse attacks. </h4>
               </td>
             </tr>
             <tr>
               <td width="80%">
-                <p class="line"><h4>Towards Mitigating Architecture Overfitting in Dataset Distillation</h4></p>
-                <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
+                <p class="line"><h4>Differentially Private Neural Network Training under Hidden State Assumption</h4></p>
+                <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-1', 'preprint-detail-1');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
-                    <a href="doc/DataDistillationArchOverfit/DataDistillationArchOverfit_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-1', 'preprint-detail-1');"><span id="click-preprint-detail-1">[Abstract]</span></text> &nbsp
+                    <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
             <tr id="preprint-detail-1">
               <td width="100%">
-                <h4 class="detail"> Dataset distillation methods have demonstrated remarkable performance for neural networks trained with very limited training data. However, a significant challenge arises in the form of architecture overfitting: the distilled training data synthesized by a specific network architecture (i.e., training network) generates poor performance when trained by other network architectures (i.e., test networks). This paper addresses this issue and proposes a series of approaches in both architecture designs and training schemes which can be adopted together to boost the generalization performance across different network architectures on the distilled training data. We conduct extensive experiments to demonstrate the effectiveness and generality of our methods. Particularly, across various scenarios involving different sizes of distilled data, our approaches achieve comparable or superior performance to existing methods when training on the distilled data using networks with larger capacities. </h4>
+                <h4 class="detail"> We present a novel approach called differentially private stochastic block coordinate descent (DP-SBCD) for training neural networks with provable guarantees of differential privacy under the hidden state assumption. Our methodology incorporates Lipschitz neural networks and decomposes the training process of the neural network into sub-problems, each corresponding to the training of a specific layer. By doing so, we extend the analysis of differential privacy under the hidden state assumption to encompass non-convex problems and algorithms employing proximal gradient descent. Furthermore, in contrast to existing methods, we adopt a novel approach by utilizing calibrated noise sampled from adaptive distributions, yielding improved empirical trade-offs between utility and privacy. </h4>
               </td>
             </tr>
           </table>
 
           <h2 style="margin-bottom:-10px">Refereed Papers</h2>
           <table width="100%" border="0" align="center">
+            <tr>
+              <td width="80%">
+                <p class="line"><h4>Towards Mitigating Architecture Overfitting in Dataset Distillation</h4></p>
+                <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
+                <p class="line"><I>IEEE Transactions on Neural Networks and Learning Systems 2025.</I></p>
+                <p class="line">
+                  <div class="highlight">
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-13', 'pub-detail-13');"><span id="click-pub-detail-13">[Abstract]</span></text> &nbsp
+                    <a href="doc/DataDistillationArchOverfit/DataDistillationArchOverfit_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="pub-detail-13">
+              <td width="100%">
+                <h4 class="detail"> Dataset distillation methods have demonstrated remarkable performance for neural networks trained with very limited training data. However, a significant challenge arises in the form of architecture overfitting: the distilled training data synthesized by a specific network architecture (i.e., training network) generates poor performance when trained by other network architectures (i.e., test networks). This paper addresses this issue and proposes a series of approaches in both architecture designs and training schemes which can be adopted together to boost the generalization performance across different network architectures on the distilled training data. We conduct extensive experiments to demonstrate the effectiveness and generality of our methods. Particularly, across various scenarios involving different sizes of distilled data, our approaches achieve comparable or superior performance to existing methods when training on the distilled data using networks with larger capacities. </h4>
+              </td>
+            </tr>
             <tr>
               <td width="80%">
                 <p class="line"><h4>On the Impact of Hard Adversarial Instances on Overfitting in Adversarial Training</h4></p>
