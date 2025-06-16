@@ -84,17 +84,34 @@
           <table width="100%" border="0" align="center">
             <tr>
               <td width="80%">
-                <p class="line"><h4>Gradient Inversion Transcript: Leveraging Robust Generative Priors to Reconstruct Training Data from Gradient Leakage</h4></p>
-                <p class="line">Xinping Chen, <u>Chen Liu</u>.</p>
+                <p class="line"><h4>Hidden State Differential Private Mini-Batch Block Coordinate Descent for Multi-convexity Optimization</h4></p>
+                <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
                     <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-5', 'preprint-detail-5');"><span id="click-preprint-detail-5">[Abstract]</span></text> &nbsp
-                    <a href="doc/GIT/GIT_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                    <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
             <tr id="preprint-detail-5">
+              <td width="100%">
+                <h4 class="detail"> We investigate the differential privacy (DP) guarantees under the hidden state assumption (HSA) for multi-convex problems. Recent analyses of privacy loss under the hidden state assumption have relied on strong assumptions such as convexity, thereby limiting their applicability to practical problems. In this paper, we introduce the Differential Privacy Mini-Batch Block Coordinate Descent (DP-MBCD) algorithm, accompanied by the privacy loss accounting methods under the hidden state assumption. Our proposed methods apply to a broad range of classical non-convex problems which are or can be converted to multi-convex problems, such as matrix factorization and neural network training. In addition to a tighter bound for privacy loss, our theoretical analysis is also compatible with proximal gradient descent and adaptive calibrated noise scenarios. </h4>
+              </td>
+            </tr>
+            <tr>
+              <td width="80%">
+                <p class="line"><h4>Gradient Inversion Transcript: Leveraging Robust Generative Priors to Reconstruct Training Data from Gradient Leakage</h4></p>
+                <p class="line">Xinping Chen, <u>Chen Liu</u>.</p>
+                <p class="line">
+                  <div class="highlight">
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-4', 'preprint-detail-4');"><span id="click-preprint-detail-4">[Abstract]</span></text> &nbsp
+                    <a href="doc/GIT/GIT_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="preprint-detail-4">
               <td width="100%">
                 <h4 class="detail">We propose Gradient Inversion Transcript (GIT), a novel generative approach for reconstructing training data from leaked gradients. GIT employs a generative attack model, whose architecture is tailored to align with the structure of the leaked model based on theoretical analysis. Once trained offline, GIT can be deployed efficiently and only relies on the leaked gradients to reconstruct the input data, rendering it applicable under various distributed learning environments. When used as a prior for other iterative optimization-based methods, GIT not only accelerates convergence but also enhances the overall reconstruction quality. GIT consistently outperforms existing methods across multiple datasets and demonstrates strong robustness under challenging conditions, including inaccurate gradients, data distribution shifts and discrepancies in model parameters.</h4>
               </td>
@@ -105,13 +122,13 @@
                 <p class="line">Xuyang Zhong, Haochen Luo, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-4', 'preprint-detail-4');"><span id="click-preprint-detail-4">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
                     <a href="doc/DualOptim/DualOptim_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-4">
+            <tr id="preprint-detail-3">
               <td width="100%">
                 <h4 class="detail"> Existing machine unlearning (MU) approaches exhibit significant sensitivity to hyperparameters, requiring meticulous tuning that limits practical deployment. In this work, we first empirically demonstrate the instability and suboptimal performance of existing popular MU methods when deployed in different scenarios. To address this issue, we propose Dual Optimizer (DualOptim), which incorporates adaptive learning rate and decoupled momentum factors. Empirical and theoretical evidence demonstrates that DualOptim contributes to effective and stable unlearning. Through extensive experiments, we show that DualOptim can significantly boost MU efficacy and stability across diverse tasks, including image classification, image generation, and large language models, making it a versatile approach to empower existing MU algorithms. </h4>
               </td>
@@ -122,13 +139,13 @@
                 <p class="line">Xuyang Zhong, Yixiao Huang, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
                     <a href="doc/FastSPGD/FastSPGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-3">
+            <tr id="preprint-detail-2">
               <td width="100%">
                 <h4 class="detail"> This paper studies fast adversarial training against sparse adversarial perturbations bounded by l0 norm. We demonstrate the challenges of employing 1-step attacks on l0 bounded perturbations for fast adversarial training, including degraded performance and the occurrence of catastrophic overfitting (CO). We highlight that CO in l0 adversarial training is caused by sub-optimal perturbation locations of 1-step attack. Theoretical and empirical analyses reveal that the loss landscape of l0 adversarial training is more craggy compared to its l-infinity, l2 and l1 counterparts. Moreover, we corroborate that the craggy loss landscape can aggravate CO. To address these issues, we propose Fast-LS-l0 that incorporates soft labels and the trade-off loss function to smooth the adversarial loss landscape. Extensive experiments demonstrate our method can overcome the challenge of catastrophic overfitting, achieve state-of-the-art performance, and narrow down the performance gap between 1-step and multi-step adversarial training against sparse attacks. </h4>
               </td>
@@ -139,32 +156,15 @@
                 <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
-                    <a href="doc/SPGD/SPGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
-                  </div>
-                </p>
-              </td>
-            </tr>
-            <tr id="preprint-detail-2">
-              <td width="100%">
-                <h4 class="detail"> This work studies sparse adversarial perturbations, including both unstructured and structured ones. We propose a framework based on a white-box PGD-like attack method named Sparse-PGD to effectively and efficiently generate such perturbations. Furthermore, we combine Sparse-PGD with a black-box attack to comprehensively and more reliably evaluate the models' robustness against unstructured and structured sparse adversarial perturbations. Moreover, the efficiency of Sparse-PGD enables us to conduct adversarial training to build robust models against various sparse perturbations. Extensive experiments demonstrate that our proposed attack algorithm exhibits strong performance in different scenarios. More importantly, compared with other robust models, our adversarially trained model demonstrates state-of-the-art robustness against various sparse attacks. </h4>
-              </td>
-            </tr>
-            <tr>
-              <td width="80%">
-                <p class="line"><h4>Differentially Private Neural Network Training under Hidden State Assumption</h4></p>
-                <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
-                <p class="line">
-                  <div class="highlight">
                     <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-1', 'preprint-detail-1');"><span id="click-preprint-detail-1">[Abstract]</span></text> &nbsp
-                    <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                    <a href="doc/SPGD/SPGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
             <tr id="preprint-detail-1">
               <td width="100%">
-                <h4 class="detail"> We present a novel approach called differentially private stochastic block coordinate descent (DP-SBCD) for training neural networks with provable guarantees of differential privacy under the hidden state assumption. Our methodology incorporates Lipschitz neural networks and decomposes the training process of the neural network into sub-problems, each corresponding to the training of a specific layer. By doing so, we extend the analysis of differential privacy under the hidden state assumption to encompass non-convex problems and algorithms employing proximal gradient descent. Furthermore, in contrast to existing methods, we adopt a novel approach by utilizing calibrated noise sampled from adaptive distributions, yielding improved empirical trade-offs between utility and privacy. </h4>
+                <h4 class="detail"> This work studies sparse adversarial perturbations, including both unstructured and structured ones. We propose a framework based on a white-box PGD-like attack method named Sparse-PGD to effectively and efficiently generate such perturbations. Furthermore, we combine Sparse-PGD with a black-box attack to comprehensively and more reliably evaluate the models' robustness against unstructured and structured sparse adversarial perturbations. Moreover, the efficiency of Sparse-PGD enables us to conduct adversarial training to build robust models against various sparse perturbations. Extensive experiments demonstrate that our proposed attack algorithm exhibits strong performance in different scenarios. More importantly, compared with other robust models, our adversarially trained model demonstrates state-of-the-art robustness against various sparse attacks. </h4>
               </td>
             </tr>
           </table>
@@ -199,6 +199,7 @@
                   <div class="highlight">
                     <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-12', 'pub-detail-12');"><span id="click-pub-detail-12">[Abstract]</span></text> &nbsp
                     <a href="doc/HardAdversarialInstances/HardAdversarialInstances_PDF.pdf" target="_blank" style="color:red">[PDF]</a> &nbsp
+                    <a href="https://recorder-v3.slideslive.com/#/share?share=101832&s=ad425e2b-dd0a-41ae-b864-e340a4bd054d" target="_blank" style="color:red">[Video]</a> &nbsp
                     <a href="doc/HardAdversarialInstances/HardAdversarialInstances_Slides.pdf" target="_blank" style="color:red">[Slides]</a> &nbsp
                     <a href="https://github.com/IVRL/RobustOverfit-HardInstance" target="_blank" style="color:red;">[Code]</a>
                   </div>
