@@ -85,16 +85,16 @@
             <tr>
               <td width="80%">
                 <p class="line"><h4>EFS: Evolutionary Factor Searching for Sparse Portfolio Optimization Using Large Language Models</h4></p>
-                <p class="line">Haochen Luo, Yuan Zhang <u>Chen Liu</u>.</p>
+                <p class="line">Haochen Luo, Yuan Zhang, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-6', 'preprint-detail-6');"><span id="click-preprint-detail-6">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-4', 'preprint-detail-4');"><span id="click-preprint-detail-4">[Abstract]</span></text> &nbsp
                     <a href="doc/EFS/EFS_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-6">
+            <tr id="preprint-detail-4">
               <td width="100%">
                 <h4 class="detail"> Sparse portfolio optimization is a fundamental yet challenging problem in quantitative finance, since traditional approaches heavily relying on historical return statistics and static objectives can hardly adapt to dynamic market regimes. To address this issue, we propose Evolutionary Factor Search (EFS), a novel framework that leverages large language models (LLMs) to automate the generation and evolution of alpha factors for sparse portfolio construction. By reformulating the asset selection problem as a top-m ranking task guided by LLM-generated factors, EFS incorporates an evolutionary feedback loop to iteratively refine the factor pool based on performance. Extensive experiments on five Fama-French benchmark datasets and three real-market datasets (US50, HSI45 and CSI300) demonstrate that EFS significantly outperforms both statistical-based and optimization-based baselines, especially in larger asset universes and volatile conditions. Comprehensive ablation studies validate the importance of prompt composition, factor diversity, and LLM backend choice. Our results highlight the promise of language-guided evolution as a robust and interpretable paradigm for portfolio optimization under structural constraints. </h4>
               </td>
@@ -105,13 +105,13 @@
                 <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-5', 'preprint-detail-5');"><span id="click-preprint-detail-5">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
                     <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-5">
+            <tr id="preprint-detail-3">
               <td width="100%">
                 <h4 class="detail"> We investigate the differential privacy (DP) guarantees under the hidden state assumption (HSA) for multi-convex problems. Recent analyses of privacy loss under the hidden state assumption have relied on strong assumptions such as convexity, thereby limiting their applicability to practical problems. In this paper, we introduce the Differential Privacy Mini-Batch Block Coordinate Descent (DP-MBCD) algorithm, accompanied by the privacy loss accounting methods under the hidden state assumption. Our proposed methods apply to a broad range of classical non-convex problems which are or can be converted to multi-convex problems, such as matrix factorization and neural network training. In addition to a tighter bound for privacy loss, our theoretical analysis is also compatible with proximal gradient descent and adaptive calibrated noise scenarios. </h4>
               </td>
@@ -122,49 +122,15 @@
                 <p class="line">Xinping Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-4', 'preprint-detail-4');"><span id="click-preprint-detail-4">[Abstract]</span></text> &nbsp
-                    <a href="doc/GIT/GIT_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
-                  </div>
-                </p>
-              </td>
-            </tr>
-            <tr id="preprint-detail-4">
-              <td width="100%">
-                <h4 class="detail">We propose Gradient Inversion Transcript (GIT), a novel generative approach for reconstructing training data from leaked gradients. GIT employs a generative attack model, whose architecture is tailored to align with the structure of the leaked model based on theoretical analysis. Once trained offline, GIT can be deployed efficiently and only relies on the leaked gradients to reconstruct the input data, rendering it applicable under various distributed learning environments. When used as a prior for other iterative optimization-based methods, GIT not only accelerates convergence but also enhances the overall reconstruction quality. GIT consistently outperforms existing methods across multiple datasets and demonstrates strong robustness under challenging conditions, including inaccurate gradients, data distribution shifts and discrepancies in model parameters.</h4>
-              </td>
-            </tr>
-            <tr>
-              <td width="80%">
-                <p class="line"><h4>DualOptim: Enhancing Efficacy and Stability in Machine Unlearning with Dual Optimizers</h4></p>
-                <p class="line">Xuyang Zhong, Haochen Luo, <u>Chen Liu</u>.</p>
-                <p class="line">
-                  <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
-                    <a href="doc/DualOptim/DualOptim_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
-                  </div>
-                </p>
-              </td>
-            </tr>
-            <tr id="preprint-detail-3">
-              <td width="100%">
-                <h4 class="detail"> Existing machine unlearning (MU) approaches exhibit significant sensitivity to hyperparameters, requiring meticulous tuning that limits practical deployment. In this work, we first empirically demonstrate the instability and suboptimal performance of existing popular MU methods when deployed in different scenarios. To address this issue, we propose Dual Optimizer (DualOptim), which incorporates adaptive learning rate and decoupled momentum factors. Empirical and theoretical evidence demonstrates that DualOptim contributes to effective and stable unlearning. Through extensive experiments, we show that DualOptim can significantly boost MU efficacy and stability across diverse tasks, including image classification, image generation, and large language models, making it a versatile approach to empower existing MU algorithms. </h4>
-              </td>
-            </tr>
-            <tr>
-              <td width="80%">
-                <p class="line"><h4>Fast Adversarial Training against Sparse Attacks Requires Loss Smoothing</h4></p>
-                <p class="line">Xuyang Zhong, Yixiao Huang, <u>Chen Liu</u>.</p>
-                <p class="line">
-                  <div class="highlight">
                     <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
-                    <a href="doc/FastSPGD/FastSPGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                    <a href="doc/GIT/GIT_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
             <tr id="preprint-detail-2">
               <td width="100%">
-                <h4 class="detail"> This paper studies fast adversarial training against sparse adversarial perturbations bounded by l0 norm. We demonstrate the challenges of employing 1-step attacks on l0 bounded perturbations for fast adversarial training, including degraded performance and the occurrence of catastrophic overfitting (CO). We highlight that CO in l0 adversarial training is caused by sub-optimal perturbation locations of 1-step attack. Theoretical and empirical analyses reveal that the loss landscape of l0 adversarial training is more craggy compared to its l-infinity, l2 and l1 counterparts. Moreover, we corroborate that the craggy loss landscape can aggravate CO. To address these issues, we propose Fast-LS-l0 that incorporates soft labels and the trade-off loss function to smooth the adversarial loss landscape. Extensive experiments demonstrate our method can overcome the challenge of catastrophic overfitting, achieve state-of-the-art performance, and narrow down the performance gap between 1-step and multi-step adversarial training against sparse attacks. </h4>
+                <h4 class="detail">We propose Gradient Inversion Transcript (GIT), a novel generative approach for reconstructing training data from leaked gradients. GIT employs a generative attack model, whose architecture is tailored to align with the structure of the leaked model based on theoretical analysis. Once trained offline, GIT can be deployed efficiently and only relies on the leaked gradients to reconstruct the input data, rendering it applicable under various distributed learning environments. When used as a prior for other iterative optimization-based methods, GIT not only accelerates convergence but also enhances the overall reconstruction quality. GIT consistently outperforms existing methods across multiple datasets and demonstrates strong robustness under challenging conditions, including inaccurate gradients, data distribution shifts and discrepancies in model parameters.</h4>
               </td>
             </tr>
             <tr>
@@ -188,6 +154,60 @@
 
           <h2 style="margin-bottom:-10px">Refereed Papers</h2>
           <table width="100%" border="0" align="center">
+            <tr>
+              <td width="80%">
+                <p class="line"><h4>DualOptim: Enhancing Efficacy and Stability in Machine Unlearning with Dual Optimizers</h4></p>
+                <p class="line">Xuyang Zhong, Haochen Luo, <u>Chen Liu</u>.</p>
+                <p class="line"><I>Neural Information Processing Systems (NeurIPS) 2025.</I></p>
+                <p class="line">
+                  <div class="highlight">
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-16', 'pub-detail-16');"><span id="click-pub-detail-16">[Abstract]</span></text> &nbsp
+                    <a href="." target="_blank" style="color:red">[To Appear]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="pub-detail-16">
+              <td width="100%">
+                <h4 class="detail"> Existing machine unlearning (MU) approaches exhibit significant sensitivity to hyperparameters, requiring meticulous tuning that limits practical deployment. In this work, we first empirically demonstrate the instability and suboptimal performance of existing popular MU methods when deployed in different scenarios. To address this issue, we propose Dual Optimizer (DualOptim), which incorporates adaptive learning rate and decoupled momentum factors. Empirical and theoretical evidence demonstrates that DualOptim contributes to effective and stable unlearning. Through extensive experiments, we show that DualOptim can significantly boost MU efficacy and stability across diverse tasks, including image classification, image generation, and large language models, making it a versatile approach to empower existing MU algorithms. </h4>
+              </td>
+            </tr>
+            <tr>
+              <td width="80%">
+                <p class="line"><h4>Data Selection Matters: Towards Robust Instruction Tuning of Large Multimodal Models</h4></p>
+                <p class="line">Xu Yang, <u>Chen Liu</u>, Ying Wei.</p>
+                <p class="line"><I>Neural Information Processing Systems (NeurIPS) 2025.</I></p>
+                <p class="line">
+                  <div class="highlight">
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-15', 'pub-detail-15');"><span id="click-pub-detail-15">[Abstract]</span></text> &nbsp
+                    <a href="." target="_blank" style="color:red">[To Appear]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="pub-detail-15">
+              <td width="100%">
+                <h4 class="detail"> Selecting a compact set of visual instruction–following data has emerged as an effective way to align large multimodal models with human intentions while avoiding the cost of full-dataset training. Yet we observe that both full-data and state-of-the-art-method selected-data instruction tuning can inherit underlying dataset biases, leading to biased model behavior due to position bias and spurious correlations. We introduce ARDS, a robustness-aware targeted visual instruction-selection framework that explicitly targets these weaknesses, sidestepping the need for access to downstream data or time-consuming gradient computation. Specifically, we first generate the worst-case evaluation subgroups through visual and textual task-specific perturbations. The robust training mixture is then constructed by prioritizing the samples that are semantically closer to these subgroups in the rich multimodal embedding space. Extensive experiments show that ARDS substantially boosts both robustness and data efficiency for visual instruction tuning. We also showcase that the robust mixtures produced with a smaller model transfer effectively to larger architectures. </h4>
+              </td>
+            </tr>
+            <tr>
+              <td width="80%">
+                <p class="line"><h4>Fast Adversarial Training against Sparse Attacks Requires Loss Smoothing</h4></p>
+                <p class="line">Xuyang Zhong, Yixiao Huang, <u>Chen Liu</u>.</p>
+                <p class="line"><I>Neural Information Processing Systems (NeurIPS) 2025.</I></p>
+                <p class="line">
+                  <div class="highlight">
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-14', 'pub-detail-14');"><span id="click-pub-detail-14">[Abstract]</span></text> &nbsp
+                    <a href="." target="_blank" style="color:red">[To Appear]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="pub-detail-14">
+              <td width="100%">
+                <h4 class="detail"> This paper studies fast adversarial training against sparse adversarial perturbations bounded by l0 norm. We demonstrate the challenges of employing 1-step attacks on l0 bounded perturbations for fast adversarial training, including degraded performance and the occurrence of catastrophic overfitting (CO). We highlight that CO in l0 adversarial training is caused by sub-optimal perturbation locations of 1-step attack. Theoretical and empirical analyses reveal that the loss landscape of l0 adversarial training is more craggy compared to its l-infinity, l2 and l1 counterparts. Moreover, we corroborate that the craggy loss landscape can aggravate CO. To address these issues, we propose Fast-LS-l0 that incorporates soft labels and the trade-off loss function to smooth the adversarial loss landscape. Extensive experiments demonstrate our method can overcome the challenge of catastrophic overfitting, achieve state-of-the-art performance, and narrow down the performance gap between 1-step and multi-step adversarial training against sparse attacks. </h4>
+              </td>
+            </tr>
             <tr>
               <td width="80%">
                 <p class="line"><h4>Towards Mitigating Architecture Overfitting in Dataset Distillation</h4></p>
