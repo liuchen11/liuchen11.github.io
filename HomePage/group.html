@@ -5,9 +5,59 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/all.css"/>
     <link rel="author" href="https://plus.google.com/102799544779548851082/?rel=author"/>
     <meta charset="UTF-8">
+    <script>
+      function displayDetail(id) {
+        document.getElementById(id).style.display = "block";
+      }
+
+      function hideDetail(id) {
+        document.getElementById(id).style.display = "none";
+      }
+
+      var display = {};
+
+      function init() {
+        var message = "";
+        try{
+          for (var i = 1; ; i++) {
+            document.getElementById("phd-detail-" + String(i)).style.display = "none";
+            display["phd-detail-" + String(i)] = "block";
+          }
+        }catch(err){
+          message += err.message;
+        }
+        try{
+          for (var i = 1; ; i++) {
+            document.getElementById("mphil-detail-" + String(i)).style.display = "none";
+            display["mphil-detail-" + String(i)] = "block";
+          }
+        }catch(err){
+          message += err.message;
+        }
+        try{
+          for (var i = 1; ; i++) {
+            document.getElementById("ra-detail-" + String(i)).style.display = "none";
+            display["ra-detail-" + String(i)] = "block";
+          }
+        }catch(err){
+          message += err.message;
+        }
+      }
+      
+      function expandorhide(name){
+        var element = document.getElementById(name)
+        if (element.style.display == "block" || element.style.display == "inline"){
+          display[name] = element.style.display;
+          element.style.display = "none";
+        } else {
+          element.style.display = display[name];
+        }
+      }
+
+    </script>
   </head>
 
-  <body>
+  <body onload="init();">
 
     <div class="content">
         <div class="nav">
@@ -31,10 +81,10 @@
         <td width="60%">
           Machine Learning and Optimization Lab (MLO) at City University of Hong Kong primarily performs research in understanding and improving the reliability of modern machine learning systems. Our research interests include the following areas:
           <ul>
-            <li>Adversarial robustness of deep neural networks.</li></br>
+            <li>Robustness of multimodal large models.</li></br>
             <li>Privacy-preserving machine learning systems.</li></br>
-            <li>Efficient learning algorithms.</li></br>
-            <li>Optimization and generalization properties of machine learning models.</li>
+            <li>Efficient learning algorithms, especially for large language models.</li></br>
+            <li>Optimization and generalization properties of machine learning algorithms.</li>
           </ul>
           If you are interested in fundamental machine learning theory and algorithms, please check the page of <a href="./openings.html">open positions</a> for potential opportunities.
         </td>
@@ -46,26 +96,71 @@
           <h2>Members</h2>
           <h3>Faculty and PI</h3>
           <ul>
-            <li><a href="./index.html">Chen Liu</a></li>
+            <li><a href="./index.html">Chen Liu</a></li><br>
           </ul>
           <h3>PhD Students</h3>
           <ul>
-            <li>Xiaofei Wang (2025.09 - )</li></br>
-            <li>Zhiyang Wu (2025.01 - , with <a href="https://scholar.google.com/citations?user=xCxyGuwAAAAJ&hl=en" target="_blank">Zhicong Lu</a> from <a href="https://www.gmu.edu" target="_blank">George Mason University</a>)</li></br>
-            <li>Jingning Xu (2024.09 - )</li></br>
-            <li>Xu Yang (2023.09 - , with <a href="https://wei-ying.net" target="_blank">Ying Wei</a> from <a href="https://www.zju.edu.cn/english/" target="_blank">Zhejiang University</a>)</li></br>
-            <li>Xinping Chen (2023.09 - )</li></br>
-            <li>Ding Chen (2023.06 - )</li></br>
-            <li>Xuyang Zhong (2023.01 - )</li>
+            <li><text onclick="expandorhide('phd-detail-7')"><a href="#">Xiaofei Wang</a> (2025.09 - )</text></li><br>
+            <ul id='phd-detail-7'>
+              <li> Research Area: Efficient Learning; Large Language Model.</li><br>
+              <li> Master's Degree. Northwestern Polytechnical University.</li><br>
+              <li> Bachelor's Degree. Northwestern Polytechnical University.</li>
+            </ul>
+            <li><text onclick="expandorhide('phd-detail-6')"><a href="#">Zhiyang Wu</a> (2025.01 - , with <a href="https://scholar.google.com/citations?user=xCxyGuwAAAAJ&hl=en" target="_blank">Zhicong Lu</a> from <a href="https://www.gmu.edu" target="_blank">George Mason University</a>)</text></li><br>
+            <ul id='phd-detail-6'>
+              <li> Research Area: Human Computer Interaction; AI Ethics.</li><br>
+              <li> Bachelor's Degree. Hong Kong University of Science and Technology.</li>
+            </ul>
+            <li><text onclick="expandorhide('phd-detail-5')"><a href="#">Jingning Xu</a> (2024.09 - )</text></li><br>
+            <ul id='phd-detail-5'>
+              <li> Research Area: Adversarial Robustness; Multimodal Model.</li><br>
+              <li> Master's Degree. Tongji University.</li><br>
+              <li> Bachelor's Degree. Tongji University.</li>
+            </ul>
+            <li><text onclick="expandorhide('phd-detail-4')"><a href="#">Xu Yang</a> (2023.09 - , with <a href="https://wei-ying.net" target="_blank">Ying Wei</a> from <a href="https://www.zju.edu.cn/english/" target="_blank">Zhejiang University</a>)</text></li><br>
+            <ul id='phd-detail-4'>
+              <li> Research Area: Large Language Model; Domain Generalization.</li><br>
+              <li> Bachelor's Degree. Sichuan University.</li>
+            </ul>
+            <li><text onclick="expandorhide('phd-detail-3')"><a href="#">Xinping Chen</a> (2023.09 - )</text></li><br>
+            <ul id='phd-detail-3'>
+              <li> Research Area: Privacy; Data Reconstruction.</li><br>
+              <li> Master's Degree. Imperial College London.</li><br>
+              <li> Bachelor's Degree. University of Electronic Science and Technology of China.</li>
+            </ul>
+            <li><text onclick="expandorhide('phd-detail-2')"><a href="#">Ding Chen</a> (2023.06 - )</text></li><br>
+            <ul id='phd-detail-2'>
+              <li> Research Area: Differential Privacy; Optimization Theory.</li><br>
+              <li> Master's Degree. Shanghai Jiao Tong University.</li><br>
+              <li> Bachelor's Degree. Huazhong University of Science and Technology.</li>
+            </ul>
+            <li><text onclick="expandorhide('phd-detail-1')"><a href="#">Xuyang Zhong</a> (2023.01 - )</text></li><br>
+            <ul id='phd-detail-1'>
+              <li> Research Area: Adversarial Training; Machine Unlearning.</li><br>
+              <li> Master's Degree. Technical University of Munich.</li><br>
+              <li> Bachelor's Degree. Beijing Institute of Technology.</li>
+            </ul>
           </ul>
           <h3>MPhil Students</h3>
           <ul>
-            <li>Jiandong Chen (2025.09 - )</li></br>
-            <li>Haochen Luo (2025.01 - )</li>
+            <li><text onclick="expandorhide('mphil-detail-2')"><a href="#">Jiandong Chen</a> (2025.09 - )</text></li><br>
+            <ul id='mphil-detail-2'>
+              <li> Research Area: Large Language Model; AI4Finance.</li><br>
+              <li> Bachelor's Degree. Beijing Normal University.</li>
+            </ul>
+            <li><text onclick="expandorhide('mphil-detail-1')"><a href="#">Haochen Luo</a> (2025.01 - )</text></li><br>
+            <ul id='mphil-detail-1'>
+              <li> Research Area: Large Language Model; AI4Finance.</li><br>
+              <li> Bachelor's Degree. Northeastern University.</li>
+            </ul>
           </ul>
           <h3>Research Assistant</h3>
           <ul>
-            <li>Baoyi Zhong (2025.11 - )</li>
+            <li><text onclick="expandorhide('ra-detail-1')"><a href="#">Baoyi Zhong</a> (2025.11 - )</text></li><br>
+            <ul id='ra-detail-1'>
+              <li> Research Area: Efficient Learning; Large Language Model.</li><br>
+              <li> Bachelor's Degree. Dalian University of Technology.</li>
+            </ul>
             <!-- <li><a href="https://yixiao-huang.github.io" target="_blank">Yixiao Huang</a> (2024.03 - )</li> -->
           </ul>
         </td>
