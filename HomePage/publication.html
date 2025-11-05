@@ -22,17 +22,25 @@
       function init() {
         var message = "";
         try{
-          for (var i = 1; ; i++) {
-            document.getElementById("pub-detail-" + String(i)).style.display = "none";
-            display["pub-detail-" + String(i)] = "block";
+          for (var i = 1; i < 1000; i++) {
+            try{
+              document.getElementById("pub-detail-" + String(i)).style.display = "none";
+              display["pub-detail-" + String(i)] = "block";
+            }catch(err){
+              continue;
+            }
           }
         }catch(err){
           message += err.message;
         }
         try{
-          for (var i = 1; ; i++) {
-            document.getElementById("preprint-detail-" + String(i)).style.display = "none";
-            display["preprint-detail-" + String(i)] = "block";
+          for (var i = 1; i < 1000; i++) {
+            try{
+              document.getElementById("preprint-detail-" + String(i)).style.display = "none";
+              display["preprint-detail-" + String(i)] = "block";
+            }catch(err){
+              continue;
+            }
           }
         }catch(err){
           message += err.message;
@@ -88,13 +96,13 @@
                 <p class="line">Haochen Luo, Yuan Zhang, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-4', 'preprint-detail-4');"><span id="click-preprint-detail-4">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
                     <a href="doc/EFS/EFS_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-4">
+            <tr id="preprint-detail-3">
               <td width="100%">
                 <h4 class="detail"> Sparse portfolio optimization is a fundamental yet challenging problem in quantitative finance, since traditional approaches heavily relying on historical return statistics and static objectives can hardly adapt to dynamic market regimes. To address this issue, we propose Evolutionary Factor Search (EFS), a novel framework that leverages large language models (LLMs) to automate the generation and evolution of alpha factors for sparse portfolio construction. By reformulating the asset selection problem as a top-m ranking task guided by LLM-generated factors, EFS incorporates an evolutionary feedback loop to iteratively refine the factor pool based on performance. Extensive experiments on five Fama-French benchmark datasets and three real-market datasets (US50, HSI45 and CSI300) demonstrate that EFS significantly outperforms both statistical-based and optimization-based baselines, especially in larger asset universes and volatile conditions. Comprehensive ablation studies validate the importance of prompt composition, factor diversity, and LLM backend choice. Our results highlight the promise of language-guided evolution as a robust and interpretable paradigm for portfolio optimization under structural constraints. </h4>
               </td>
@@ -105,13 +113,13 @@
                 <p class="line">Ding Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-3', 'preprint-detail-3');"><span id="click-preprint-detail-3">[Abstract]</span></text> &nbsp
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
                     <a href="doc/DPHSA/DPHSA_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
-            <tr id="preprint-detail-3">
+            <tr id="preprint-detail-2">
               <td width="100%">
                 <h4 class="detail"> We investigate the differential privacy (DP) guarantees under the hidden state assumption (HSA) for multi-convex problems. Recent analyses of privacy loss under the hidden state assumption have relied on strong assumptions such as convexity, thereby limiting their applicability to practical problems. In this paper, we introduce the Differential Privacy Mini-Batch Block Coordinate Descent (DP-MBCD) algorithm, accompanied by the privacy loss accounting methods under the hidden state assumption. Our proposed methods apply to a broad range of classical non-convex problems which are or can be converted to multi-convex problems, such as matrix factorization and neural network training. In addition to a tighter bound for privacy loss, our theoretical analysis is also compatible with proximal gradient descent and adaptive calibrated noise scenarios. </h4>
               </td>
@@ -122,38 +130,39 @@
                 <p class="line">Xinping Chen, <u>Chen Liu</u>.</p>
                 <p class="line">
                   <div class="highlight">
-                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-2', 'preprint-detail-2');"><span id="click-preprint-detail-2">[Abstract]</span></text> &nbsp
-                    <a href="doc/GIT/GIT_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
-                  </div>
-                </p>
-              </td>
-            </tr>
-            <tr id="preprint-detail-2">
-              <td width="100%">
-                <h4 class="detail">We propose Gradient Inversion Transcript (GIT), a novel generative approach for reconstructing training data from leaked gradients. GIT employs a generative attack model, whose architecture is tailored to align with the structure of the leaked model based on theoretical analysis. Once trained offline, GIT can be deployed efficiently and only relies on the leaked gradients to reconstruct the input data, rendering it applicable under various distributed learning environments. When used as a prior for other iterative optimization-based methods, GIT not only accelerates convergence but also enhances the overall reconstruction quality. GIT consistently outperforms existing methods across multiple datasets and demonstrates strong robustness under challenging conditions, including inaccurate gradients, data distribution shifts and discrepancies in model parameters.</h4>
-              </td>
-            </tr>
-            <tr>
-              <td width="80%">
-                <p class="line"><h4>Sparse-PGD: A Unified Framework for Sparse Adversarial Perturbations Generation</h4></p>
-                <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
-                <p class="line">
-                  <div class="highlight">
                     <text style="color:red;text-decoration:underline" onclick="expandorhide('click-preprint-detail-1', 'preprint-detail-1');"><span id="click-preprint-detail-1">[Abstract]</span></text> &nbsp
-                    <a href="doc/SPGD/SPGD_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
+                    <a href="doc/GIT/GIT_PDF.pdf" target="_blank" style="color:red">[PDF]</a>
                   </div>
                 </p>
               </td>
             </tr>
             <tr id="preprint-detail-1">
               <td width="100%">
-                <h4 class="detail"> This work studies sparse adversarial perturbations, including both unstructured and structured ones. We propose a framework based on a white-box PGD-like attack method named Sparse-PGD to effectively and efficiently generate such perturbations. Furthermore, we combine Sparse-PGD with a black-box attack to comprehensively and more reliably evaluate the models' robustness against unstructured and structured sparse adversarial perturbations. Moreover, the efficiency of Sparse-PGD enables us to conduct adversarial training to build robust models against various sparse perturbations. Extensive experiments demonstrate that our proposed attack algorithm exhibits strong performance in different scenarios. More importantly, compared with other robust models, our adversarially trained model demonstrates state-of-the-art robustness against various sparse attacks. </h4>
+                <h4 class="detail">We propose Gradient Inversion Transcript (GIT), a novel generative approach for reconstructing training data from leaked gradients. GIT employs a generative attack model, whose architecture is tailored to align with the structure of the leaked model based on theoretical analysis. Once trained offline, GIT can be deployed efficiently and only relies on the leaked gradients to reconstruct the input data, rendering it applicable under various distributed learning environments. When used as a prior for other iterative optimization-based methods, GIT not only accelerates convergence but also enhances the overall reconstruction quality. GIT consistently outperforms existing methods across multiple datasets and demonstrates strong robustness under challenging conditions, including inaccurate gradients, data distribution shifts and discrepancies in model parameters.</h4>
               </td>
             </tr>
           </table>
 
           <h2 style="margin-bottom:-10px">Refereed Papers</h2>
           <table width="100%" border="0" align="center">
+            <tr>
+              <td width="80%">
+                <p class="line"><h4>Sparse-PGD: A Unified Framework for Sparse Adversarial Perturbations Generation</h4></p>
+                <p class="line">Xuyang Zhong, <u>Chen Liu</u>.</p>
+                <p class="line"><I>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2025.</I></p>
+                <p class="line">
+                  <div class="highlight">
+                    <text style="color:red;text-decoration:underline" onclick="expandorhide('click-pub-detail-17', 'pub-detail-17');"><span id="click-pub-detail-17">[Abstract]</span></text> &nbsp
+                    <a href="./" target="_blank" style="color:red">[To Appear]</a>
+                  </div>
+                </p>
+              </td>
+            </tr>
+            <tr id="pub-detail-17">
+              <td width="100%">
+                <h4 class="detail"> This work studies sparse adversarial perturbations, including both unstructured and structured ones. We propose a framework based on a white-box PGD-like attack method named Sparse-PGD to effectively and efficiently generate such perturbations. Furthermore, we combine Sparse-PGD with a black-box attack to comprehensively and more reliably evaluate the models' robustness against unstructured and structured sparse adversarial perturbations. Moreover, the efficiency of Sparse-PGD enables us to conduct adversarial training to build robust models against various sparse perturbations. Extensive experiments demonstrate that our proposed attack algorithm exhibits strong performance in different scenarios. More importantly, compared with other robust models, our adversarially trained model demonstrates state-of-the-art robustness against various sparse attacks. </h4>
+              </td>
+            </tr>
             <tr>
               <td width="80%">
                 <p class="line"><h4>DualOptim: Enhancing Efficacy and Stability in Machine Unlearning with Dual Optimizers</h4></p>
