@@ -5,45 +5,23 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/all.css"/>
     <link rel="author" href="https://plus.google.com/102799544779548851082/?rel=author"/>
     <meta charset="UTF-8">
+    <style>
+      .student-name {
+        color:blue;
+        text-decoration:underline;
+      }
+    </style>
     <script>
-      function displayDetail(id) {
-        document.getElementById(id).style.display = "block";
-      }
-
-      function hideDetail(id) {
-        document.getElementById(id).style.display = "none";
-      }
-
       var display = {};
 
       function init() {
-        var message = "";
-        try{
-          for (var i = 1; ; i++) {
-            document.getElementById("phd-detail-" + String(i)).style.display = "none";
-            display["phd-detail-" + String(i)] = "block";
-          }
-        }catch(err){
-          message += err.message;
-        }
-        try{
-          for (var i = 1; ; i++) {
-            document.getElementById("mphil-detail-" + String(i)).style.display = "none";
-            display["mphil-detail-" + String(i)] = "block";
-          }
-        }catch(err){
-          message += err.message;
-        }
-        try{
-          for (var i = 1; ; i++) {
-            document.getElementById("ra-detail-" + String(i)).style.display = "none";
-            display["ra-detail-" + String(i)] = "block";
-          }
-        }catch(err){
-          message += err.message;
+        var item_list = document.querySelectorAll(".detail-container")
+        for(var i = 0; i < item_list.length; i++){
+          item_list[i].style.display = "none";
+          display[item_list[i].id] = "block";
         }
       }
-      
+
       function expandorhide(name){
         var element = document.getElementById(name)
         if (element.style.display == "block" || element.style.display == "inline"){
@@ -101,42 +79,50 @@
           </ul>
           <h3>PhD Students</h3>
           <ul>
-            <li><text onclick="expandorhide('phd-detail-7')"><text style="color:blue;text-decoration:underline">Xiaofei Wang</text> (2025.09 - )</text></li><br>
-            <ul id='phd-detail-7'>
+            <li><text onclick="expandorhide('hqren')"><text class="student-name">Heqing Ren</text> (2026.01 - )</text></li><br>
+            <ul class="detail-container" id='hqren'>
+              <li> Research Area: Machine Unlearning; Large Language Model.</li><br>
+              <li> Master's Degree. University of Zurich.</li><br>
+              <li> Master's Degree. Tsinghua University.</li><br>
+              <li> Bachelor's Degree. Zhejiang University.</li>
+            </ul>
+
+            <li><text onclick="expandorhide('xfwang')"><text class="student-name">Xiaofei Wang</text> (2025.09 - )</text></li><br>
+            <ul class="detail-container" id='xfwang'>
               <li> Research Area: Efficient Learning; Large Language Model.</li><br>
               <li> Master's Degree. Northwestern Polytechnical University.</li><br>
               <li> Bachelor's Degree. Northwestern Polytechnical University.</li>
             </ul>
-            <li><text onclick="expandorhide('phd-detail-6')"><text style="color:blue;text-decoration:underline">Zhiyang Wu</text> (2025.01 - , with <a href="https://scholar.google.com/citations?user=xCxyGuwAAAAJ&hl=en" target="_blank">Zhicong Lu</a> from <a href="https://www.gmu.edu" target="_blank">George Mason University</a>)</text></li><br>
-            <ul id='phd-detail-6'>
+            <li><text onclick="expandorhide('zywu')"><text class="student-name">Zhiyang Wu</text> (2025.01 - , with <a href="https://scholar.google.com/citations?user=xCxyGuwAAAAJ&hl=en" target="_blank">Zhicong Lu</a> from <a href="https://www.gmu.edu" target="_blank">George Mason University</a>)</text></li><br>
+            <ul class="detail-container" id='zywu'>
               <li> Research Area: Human Computer Interaction; AI Ethics.</li><br>
               <li> Bachelor's Degree. Hong Kong University of Science and Technology.</li>
             </ul>
-            <li><text onclick="expandorhide('phd-detail-5')"><text style="color:blue;text-decoration:underline">Jingning Xu</text> (2024.09 - )</text></li><br>
-            <ul id='phd-detail-5'>
+            <li><text onclick="expandorhide('jnxu')"><text class="student-name">Jingning Xu</text> (2024.09 - )</text></li><br>
+            <ul class="detail-container" id='jnxu'>
               <li> Research Area: Adversarial Robustness; Multimodal Model.</li><br>
               <li> Master's Degree. Tongji University.</li><br>
               <li> Bachelor's Degree. Tongji University.</li>
             </ul>
-            <li><text onclick="expandorhide('phd-detail-4')"><text style="color:blue;text-decoration:underline">Xu Yang</text> (2023.09 - , with <a href="https://wei-ying.net" target="_blank">Ying Wei</a> from <a href="https://www.zju.edu.cn/english/" target="_blank">Zhejiang University</a>)</text></li><br>
-            <ul id='phd-detail-4'>
+            <li><text onclick="expandorhide('xyang')"><text class="student-name">Xu Yang</text> (2023.09 - , with <a href="https://wei-ying.net" target="_blank">Ying Wei</a> from <a href="https://www.zju.edu.cn/english/" target="_blank">Zhejiang University</a>)</text></li><br>
+            <ul class="detail-container" id='xyang'>
               <li> Research Area: Large Language Model; Domain Generalization.</li><br>
               <li> Bachelor's Degree. Sichuan University.</li>
             </ul>
-            <li><text onclick="expandorhide('phd-detail-3')"><text style="color:blue;text-decoration:underline">Xinping Chen</text> (2023.09 - )</text></li><br>
-            <ul id='phd-detail-3'>
+            <li><text onclick="expandorhide('xpchen')"><text class="student-name">Xinping Chen</text> (2023.09 - )</text></li><br>
+            <ul class="detail-container" id='xpchen'>
               <li> Research Area: Privacy; Data Reconstruction.</li><br>
               <li> Master's Degree. Imperial College London.</li><br>
               <li> Bachelor's Degree. University of Electronic Science and Technology of China.</li>
             </ul>
-            <li><text onclick="expandorhide('phd-detail-2')"><text style="color:blue;text-decoration:underline">Ding Chen</text> (2023.06 - )</text></li><br>
-            <ul id='phd-detail-2'>
+            <li><text onclick="expandorhide('dchen')"><text class="student-name">Ding Chen</text> (2023.06 - )</text></li><br>
+            <ul class="detail-container" id='dchen'>
               <li> Research Area: Differential Privacy; Optimization Theory.</li><br>
               <li> Master's Degree. Shanghai Jiao Tong University.</li><br>
               <li> Bachelor's Degree. Huazhong University of Science and Technology.</li>
             </ul>
-            <li><text onclick="expandorhide('phd-detail-1')"><text style="color:blue;text-decoration:underline">Xuyang Zhong</text> (2023.01 - )</text></li><br>
-            <ul id='phd-detail-1'>
+            <li><text onclick="expandorhide('xyzhong')"><text class="student-name">Xuyang Zhong</text> (2023.01 - )</text></li><br>
+            <ul class="detail-container" id='xyzhong'>
               <li> Research Area: Adversarial Training; Machine Unlearning.</li><br>
               <li> Master's Degree. Technical University of Munich.</li><br>
               <li> Bachelor's Degree. Beijing Institute of Technology.</li>
@@ -144,26 +130,26 @@
           </ul>
           <h3>MPhil Students</h3>
           <ul>
-            <li><text onclick="expandorhide('mphil-detail-2')"><text style="color:blue;text-decoration:underline">Jiandong Chen</text> (2025.09 - )</text></li><br>
-            <ul id='mphil-detail-2'>
+            <li><text onclick="expandorhide('byzhong')"><text class="student-name">Baoyi Zhong</text> (2026.01 - )</text></li><br>
+            <ul class="detail-container" id='byzhong'>
+              <li> Research Area: Efficient Learning; Large Language Model.</li><br>
+              <li> Bachelor's Degree. Dalian University of Technology.</li>
+            </ul>
+            <li><text onclick="expandorhide('jdchen')"><text class="student-name">Jiandong Chen</text> (2025.09 - )</text></li><br>
+            <ul class="detail-container" id='jdchen'>
               <li> Research Area: Large Language Model; AI4Finance.</li><br>
               <li> Bachelor's Degree. Beijing Normal University.</li>
             </ul>
-            <li><text onclick="expandorhide('mphil-detail-1')"><text style="color:blue;text-decoration:underline">Haochen Luo</text> (2025.01 - )</text></li><br>
-            <ul id='mphil-detail-1'>
+            <li><text onclick="expandorhide('hcluo')"><text class="student-name">Haochen Luo</text> (2025.01 - )</text></li><br>
+            <ul class="detail-container" id='hcluo'>
               <li> Research Area: Large Language Model; AI4Finance.</li><br>
               <li> Bachelor's Degree. Northeastern University.</li>
             </ul>
           </ul>
-          <h3>Research Assistant</h3>
+          <!-- <h3>Research Assistant</h3>
           <ul>
-            <li><text onclick="expandorhide('ra-detail-1')"><text style="color:blue;text-decoration:underline">Baoyi Zhong</text> (2025.11 - )</text></li><br>
-            <ul id='ra-detail-1'>
-              <li> Research Area: Efficient Learning; Large Language Model.</li><br>
-              <li> Bachelor's Degree. Dalian University of Technology.</li>
-            </ul>
-            <!-- <li><a href="https://yixiao-huang.github.io" target="_blank">Yixiao Huang</a> (2024.03 - )</li> -->
-          </ul>
+            <li><a href="https://yixiao-huang.github.io" target="_blank">Yixiao Huang</a> (2024.03 - )</li>
+          </ul> -->
         </td>
         <td width="20%"></td>
       </tr>
