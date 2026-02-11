@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 2: Letter Counting</title>
+        <script>
+            function count_F(){
+                var s = document.getElementById("textinput").value;
+                var count = 0;
+                for (var i = 0; i < s.length; i++)
+                    if (s[i] == 'F' || s[i] == 'f')
+                        count++;
+                document.getElementById('number').innerHTML = count;
+                s = s.replace(/F/g, "<span class=\"highlighted-text\">F</span>")
+                s = s.replace(/f/g, "<span class=\"highlighted-text\">f</span>")
+                document.getElementById('high-text').innerHTML = s
+            }
+        </script>
+        <style>
+            .highlighted-text {color: red}
+        </style>
+    </head>
+<body onload="init();">
+    <!-- Page content begins here -->
+    <h1>Problem 2: Letter Counting</h1>
+
+    Please provide a sentence: <br>
+    <textarea type="text" id="textinput" style="width:300px; height: 100px;">FINISHED FILES ARE THE RESULT OF YEARS OF SCIENTIFIC STUDY COMBINED WITH THE EXPERIENCE OF YEARS</textarea> <br><br>
+
+    <button onclick="count_F();" id="count">Count the Number of "F"s</button>
+
+    <br><br>
+
+    <h5 id="high-text"></h5>
+    <h4>Count:  &#9 &#9 <span id= "number" ></span></h4>
+    <!--Page content ends here -->
+</body>
+</html>

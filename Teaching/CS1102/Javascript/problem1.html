@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 1: List of Numbers and Statistics</title>
+        <script>
+            var data = [];
+            var max;
+            var min;
+            var sum = 0;
+            var mean;
+
+            function check_and_add(){
+                var x = document.getElementById("textinput").value;
+                if (isNaN(x) == true){
+                    alert("Please input a valid number.");
+                } else {
+                    x = Number(x);
+                    data[data.length] = x;
+                    if (data.length == 1){
+                        max = x;
+                        min = x;
+                        sum = x;
+                        mean = x;
+                    } else {
+                        max = Math.max(max, x);
+                        min = Math.min(min, x);
+                        sum += x;
+                        mean = sum / data.length
+                    }
+                    document.getElementById("list").innerHTML = "[ " + data + " ]";
+                    document.getElementById("max").innerHTML = max;
+                    document.getElementById("min").innerHTML = min;
+                    document.getElementById("sum").innerHTML = sum;
+                    document.getElementById("mean").innerHTML = mean;
+                }
+            }
+        </script>
+    </head>
+<body onload="init();">
+    <!-- Page content begins here -->
+    <h1>Problem 1: List of Numbers and Statistics</h1>
+
+    Please provide a number: <input type="text" id="textinput"> <br><br>
+
+    <button onclick="check_and_add();" id="add">Add the Number to the List</button>
+
+    <br><br>
+
+    <h4>Full List:  &#9 &#9 <span id= "list" ></span></h4>
+    <h4>Maximum Number: &#9 <span id= "max" ></span></h4>
+    <h4>Minimum Number: &#9 <span id= "min" ></span></h4>
+    <h4>Summation:  &#9 &#9 <span id= "sum" ></span></h4>
+    <h4>Average:    &#9 &#9 <span id= "mean" ></span></h4>
+    <!--Page content ends here -->
+</body>
+</html>
