@@ -1,136 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>MLO @ CityU</title>
-    <link rel="stylesheet" type="text/css" media="all" href="css/all.css"/>
-    <link rel="author" href="https://plus.google.com/102799544779548851082/?rel=author"/>
+<head>
     <meta charset="UTF-8">
-    <script>
-      var expand = {};
-      var display = {};
-
-      function init(){
-        document.getElementById("content-ge2340").style.display = "none";
-        document.getElementById("content-cs1102").style.display = "none";
-        expand = {'content-ge2340': false, 'content-cs1102': false};
-        display = {'content-ge2340': 'block', 'content-cs1102': 'block'};
-      }
-
-      function expandorhide(text_name, list_name){
-        var text = document.getElementById(text_name)
-        var list = document.getElementById(list_name)
-        if (list.style.display == "block" || list.style.display == "inline"){
-          display[list_name] = list.style.display;
-          list.style.display = "none";
-          text.innerHTML = "[click to display details]"
-        } else {
-          list.style.display = display[list_name];
-          text.innerHTML = "[click to hide details]";
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching | MLO @ CityU</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        /* --- Global Reset & Typography --- */
+        :root {
+            --primary-color: #0056b3;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --bg-color: #ffffff;
+            --accent-bg: #f4f6f8;
+            --border-color: #eaeaea;
+            
+            /* Badge Colors */
+            --color-slides: #e65100;
+            --color-code: #2e7d32;
         }
-      }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        a:hover { color: var(--primary-color); }
+
+        /* --- Layout --- */
+        .container {
+            width: 92%;             /* Adaptive width */
+            max-width: 1200px;      /* Larger cap for wide screens */
+            margin: auto;      /* Vertical spacing */
+            padding: 20px;
+        }
+
+        /* --- Navigation --- */
+        .nav {
+            display: flex;
+            gap: 25px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        .nav a:hover, .nav span.active {
+            color: var(--primary-color);
+        }
+
+        /* --- Section Headers --- */
+        h1 { font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: -0.02em; line-height: 1.2; }
+        
+        /* --- Course Cards --- */
+        .course-card {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            border-color: #d0d7de;
+        }
+
+        .course-header {
+            margin-bottom: 15px;
+        }
+
+        .course-code {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .course-role {
+            display: inline-block;
+            background-color: var(--accent-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .course-desc {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        /* --- Buttons/Badges --- */
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            background-color: white;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .badge:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+
+        .badge.toggle-btn {
+            background-color: var(--accent-bg);
+            border-color: transparent;
+            color: var(--text-dark);
+        }
+        .badge.toggle-btn:hover { background-color: #e0e0e0; }
+
+        .badge.slides {
+            color: var(--color-slides);
+            border-color: var(--color-slides);
+        }
+        .badge.slides:hover { background-color: var(--color-slides); color: white; }
+
+        .badge.code {
+            color: var(--color-code);
+            border-color: var(--color-code);
+        }
+        .badge.code:hover { background-color: var(--color-code); color: white; }
+
+
+        /* --- Hidden Details --- */
+        .detail-container {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--accent-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .detail-container.show {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .detail-heading {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .detail-container ol, .detail-container ul {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: #444;
+        }
+        
+        .detail-container li {
+            margin-bottom: 5px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .nav { justify-content: center; gap: 15px; }
+            .course-card { padding: 20px; }
+        }
+    </style>
+    <script>
+        function toggleDetails(id, btn) {
+            const content = document.getElementById(id);
+            const isHidden = !content.classList.contains('show');
+            
+            if (isHidden) {
+                content.classList.add('show');
+                btn.innerHTML = "Hide Details";
+            } else {
+                content.classList.remove('show');
+                btn.innerHTML = "View Details";
+            }
+        }
     </script>
-  </head>
+</head>
+<body>
 
-  <body onload="init();">
-    <div class="content">
-        <!-- <div class="nav-left">
-            <a href="./index.html"><B style="font-size:25px">Chen Liu</B></a>
-        </div> -->
+    <div class="container">
         <div class="nav">
-            <a href="./index.html"><B style="font-size:20px">Home</B></a> &nbsp &nbsp 
-            <a href="./group.html"><B style="font-size:20px">Group</B></a> &nbsp &nbsp 
-            <B style="font-size:20px">Teaching</B> &nbsp &nbsp
-            <a href="./talk.html"><B style="font-size:20px">Talks</B></a> &nbsp &nbsp
-            <a href="./publication.html"><B style="font-size:20px">Publications</B></a> &nbsp &nbsp
-            <a href="./openings.html"><B style="font-size:20px">Open Positions</B></a> &nbsp &nbsp
-            <!-- <a href="./misc.html"><B style="font-size:20px">Misc.</B></a> -->
+            <a href="./index.html">Home</a>
+            <a href="./group.html">Group</a>
+            <span class="active" style="font-weight: 700; color: var(--primary-color);">Teaching</span>
+            <a href="./talk.html">Talks</a>
+            <a href="./publication.html">Publications</a>
+            <a href="./openings.html">Open Positions</a>
         </div>
+
+        <h1>Teaching</h1>
+
+        <div class="course-card">
+            <div class="course-header">
+                <span class="course-code">GE2340</span>
+                <h3 class="course-title">Artificial Intelligence: Past, Present, and Future</h3>
+                <span class="course-role">Bachelor course for General Education (GE)</span>
+            </div>
+            
+            <div class="actions">
+                <button class="badge toggle-btn" onclick="toggleDetails('details-ge2340', this)">View Details</button>
+            </div>
+
+            <div id="details-ge2340" class="detail-container">
+                <div class="detail-heading">Assessment</div>
+                <ul>
+                    <li>Quiz: 20%</li>
+                    <li>Group Project: 30%</li>
+                    <li>Midterm Exam: 20%</li>
+                    <li>Final Exam: 30%</li>
+                </ul>
+
+                <div class="detail-heading">Lecture Content Overview</div>
+                <ol>
+                    <li>Mathematical Foundations of AI</li>
+                    <li>Linear Models</li>
+                    <li>Deep Learning</li>
+                    <li>Optimization in AI</li>
+                    <li>AI Security, Privacy and Ethics</li>
+                    <li>Reinforcement Learning</li>
+                    <li>AI Applications</li>
+                    <li>Large Language Models</li>
+                    <li>Recent Advances in AI</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-header">
+                <span class="course-code">CS1102</span>
+                <h3 class="course-title">Introduction to Computer Studies</h3>
+                <span class="course-role">Bachelor course for non-CS students</span>
+            </div>
+
+            <div class="actions">
+                <button class="badge toggle-btn" onclick="toggleDetails('details-cs1102', this)">View Details</button>
+                <a href="../Teaching/CS1102/index.html" target="_blank" class="badge code">Demo Code</a>
+            </div>
+
+            <div id="details-cs1102" class="detail-container">
+                <div class="detail-heading">Assessment</div>
+                <ul>
+                    <li>Quiz: 20%</li>
+                    <li>Group Project: 20%</li>
+                    <li>Midterm Exam: 24%</li>
+                    <li>Final Exam: 36%</li>
+                </ul>
+
+                <div class="detail-heading">Lecture Content Overview</div>
+                <ol>
+                    <li>Binary Number System</li>
+                    <li>Boolean Logic, Conditionals and Loops</li>
+                    <li>HTML, CSS and Javascript</li>
+                    <li>Hardware and Computer System</li>
+                    <li>Computer Network</li>
+                    <li>Operating Systems</li>
+                    <li>Safety, Privacy and Ethics</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Digital Media</li>
+                </ol>
+                <p><em>Note: Scratch and Javascript are taught in the lab sessions.</em></p>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-header">
+                <span class="course-code">CS8659</span>
+                <h3 class="course-title">Research in Computer Science</h3>
+                <span class="course-role">Co-lecturer | Introductory course for Ph.D. students</span>
+            </div>
+            <div class="actions">
+                <a href="../Teaching/CS8695/2025Talk.pdf" target="_blank" class="badge slides">Lecture: Research & Writing</a>
+                <a href="../Teaching/CS8695/2023Talk.pdf" target="_blank" class="badge slides">Lecture: Reliable DNNs</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-header">
+                <span class="course-code">GE1601</span>
+                <h3 class="course-title">Whole-Person Development</h3>
+                <span class="course-role">Guest Lecturer | Compulsory course for freshman students</span>
+            </div>
+            <div class="actions">
+                <a href="../Teaching/GE1601/2025Talk.pdf" target="_blank" class="badge slides">Lecture: AI Unplugged</a>
+            </div>
+        </div>
+
     </div>
-
-    <table width="100%" border="0" align="center">
-        <tr>
-            <td width="20%"></td>
-            <td width="60%">
-                <div id="teaching" class="contents">
-                    <h1> Teaching </h1>
-                    <!-- <h3> Serve as Instructor </h3> -->
-                    <ul>
-                        <li>GE2340 at CityU HK: <b>Artificial Intelligence: Past, Present, and Future. <a href="#" style="color:red;font-size:13px" onclick="expandorhide('click-ge2340', 'content-ge2340');"><span id="click-ge2340">[click to display details]</span></a></b></li><br>
-                        <ul>
-                            <li>Bachelor course for general education (GE).</li><br>
-                            <div id="content-ge2340">
-                            <li>Assessment - quiz 20%; group project 30%; midterm exam 20%; final exam 30%.</li><br>
-                            <li>Lecture content overview</li><br>
-                            <ol>
-                                <li>Mathematical Fundations of AI</li><br>
-                                <li>Linear Models</li><br>
-                                <li>Deep Learning</li><br>
-                                <li>Optimization in AI</li><br>
-                                <li>AI Security, Privacy and Ethics</li><br>
-                                <li>Reinforcement Learning</li><br>
-                                <li>AI Applications</li><br>
-                                <li>Large Language Models</li><br>
-                                <li>Recent Advances in AI</li>
-                            </ol>
-                            </div>
-                        </ul>
-                        <li>CS1102 at CityU HK: <b>Introduction to Computer Studies. <a href="#" style="color:red;font-size:13px" onclick="expandorhide('click-cs1102', 'content-cs1102');"><span id="click-cs1102">[click to display details]</span></a></b></li><br>
-                        <ul>
-                            <li>Bachelor course for non-CS students.</li><br>
-                            <li><a href="../Teaching/CS1102/index.html" target="_blank">Demo code</a></li><br>
-                            <div id="content-cs1102">
-                            <li>Assessment - quiz 20%; group project 20%; midterm exam 24%; final exam 36%.</li><br>
-                            <li>Lecture content overview</li><br>
-                            <ol>
-                                <li>Binary Number System</li><br>
-                                <li>Boolean Logic, Conditionals and Loops</li><br>
-                                <li>HTML, CSS and Javascript</li><br>
-                                <li>Hardware and Computer System</li><br>
-                                <li>Computer Network</li><br>
-                                <li>Operating Systems</li><br>
-                                <li>Safety, Privacy and Ethics</li><br>
-                                <li>Artificial Intelligence</li><br>
-                                <li>Digital Media</li>
-                            </ol>
-                            <li>Scratch and Javascript are taught in the lab sessions.</li>
-                            </div>
-                        </ul>
-                        <li>CS8659 at CityU HK: <b>Research in Computer Science. (co-lecturer)</b></li><br>
-                        <ul>
-                            <li>Introductory course for Ph.D. students.</li><br>
-                            <li><a href="../Teaching/CS8695/2025Talk.pdf" target="_blank">My lecture entitled "Research and Academic Writing".</a></li><br>
-                            <li><a href="../Teaching/CS8695/2023Talk.pdf" target="_blank">My lecture entitled "Understanding and Building Reliable Deep Neural Networks".</a></li><br>
-                            <div></div>
-                        </ul>
-                        <li>GE1601 at CityU HK: <b>Whole-Person Development. (guest lecturer)</b></li><br>
-                        <ul>
-                            <li>Compulsory course for freshman students.</li><br>
-                            <li><a href="../Teaching/GE1601/2025Talk.pdf" target="_blank">My lecture entitled "AI Unplugged: Journey Through the Evolution and Future of Intelligence".</a></li><br>
-                            <div></div>
-                        </ul>
-                    </ul>
-                    <!-- <h3> Serve as Teaching Assistant </h3>
-                    <ul>
-                        <li>MATH-111(e) at EPFL: <b>Algèbre Linéaire</b>. Instructor: <a href="https://people.epfl.ch/christian.urech/?lang=en">Christian Lucius Urech</a>.</li><br>
-                        <li>CS-413 at EPFL: <b>Computational Photography</b>. Instructor: <a href="https://people.epfl.ch/sabine.susstrunk">Sabine Süsstrunk</a>.</li><br>
-                        <ul><li>The course and the instructor wins 2020 EPFL AGEPoly IC Polysphere Awards for excellence in teaching, one selected annually.</li></ul>
-                        <li>EE-556 at EPFL: <b>Mathematics of Data: From Theory to Computation</b>. Instructor: <a href="https://people.epfl.ch/volkan.cevher">Volkan Cevher</a></li>
-                    </ul>
-                    <h3> Serve as Project Mentor </h3>
-                    <ul>
-                        <li>Shuangqi Li. "On the Robustness of Generative Adversarial Networks."</li><br>
-                        <li>Francisco Ferrari. "Towards Neural Networks Robust Against Sparse Attacks".</li><br>
-                        <li>Ningwei Ma. "Adversarial Robustness for Neural Ordinary Di erential Equations".</li><br>
-                        <li>Yulun Jiang. "Adversarial Robustness for Multiple Threat Models".</li><br>
-                        <li>Ziqi Zhao. "Network Pruning in Adversarial Training".</li><br>
-                        <li>Zhenyu Zhu, Majdouline Ait Yahia. "Robust Binary Network".</li><br>
-                        <li>Julien Leal, Shengzhao Lei. "Learning Representations via Weak Supervision".</li><br>
-                    </ul> -->
-                </div>
-            </td>
-            <td width="20%"></td>
-        </tr>
-    </table>
-
-  </body>
+</body>
 </html>

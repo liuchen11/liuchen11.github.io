@@ -1,57 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>MLO @ CityU</title>
-    <link rel="stylesheet" type="text/css" media="all" href="css/all.css"/>
-    <link rel="author" href="https://plus.google.com/102799544779548851082/?rel=author"/>
+<head>
     <meta charset="UTF-8">
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talks | MLO @ CityU</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        /* --- Global Reset & Typography --- */
+        :root {
+            --primary-color: #0056b3;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --bg-color: #ffffff;
+            --accent-bg: #f4f6f8;
+            --border-color: #eaeaea;
+            --color-slides: #e65100; /* Orange for Slides/Talks */
+        }
 
-  <body onload="init();">
-    <div class="content">
-        <!-- <div class="nav-left">
-            <a href="./index.html"><B style="font-size:25px">Chen Liu</B></a>
-        </div> -->
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        a:hover { color: var(--primary-color); }
+
+        /* --- Layout --- */
+        .container {
+            width: 92%;             /* Adaptive width */
+            max-width: 1200px;      /* Larger cap for wide screens */
+            margin: auto;      /* Vertical spacing */
+            padding: 20px;
+        }
+
+        /* --- Navigation --- */
+        .nav {
+            display: flex;
+            gap: 25px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        .nav a:hover, .nav span.active {
+            color: var(--primary-color);
+        }
+
+        /* --- Section Headers --- */
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; line-height: 1.2; }
+        h3 { font-size: 1.05rem; color: var(--text-light); font-weight: 400; margin-bottom: 2.5rem; margin-top: 0.5rem; }
+
+        /* --- Talk Cards --- */
+        .talk-card {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .talk-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .talk-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* Badge Style (Slides) */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--color-slides);
+            color: var(--color-slides);
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .badge:hover {
+            background-color: var(--color-slides);
+            color: white;
+        }
+
+        /* --- Venue List --- */
+        .venue-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .venue-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .venue-date {
+            font-family: 'Inter', monospace; /* Monospace for alignment */
+            font-weight: 600;
+            color: var(--text-light);
+            min-width: 80px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .venue-loc {
+            color: var(--text-dark);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .nav { justify-content: center; gap: 15px; }
+            .talk-header { flex-direction: column; gap: 10px; }
+            .badge { align-self: flex-start; }
+            .venue-item { flex-direction: column; gap: 2px; margin-bottom: 12px; }
+            .venue-date { color: var(--primary-color); font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
         <div class="nav">
-            <a href="./index.html"><B style="font-size:20px">Home</B></a> &nbsp &nbsp 
-            <a href="./group.html"><B style="font-size:20px">Group</B></a> &nbsp &nbsp 
-            <a href="./teaching.html"><B style="font-size:20px">Teaching</B></a> &nbsp &nbsp
-            <B style="font-size:20px">Talks</B> &nbsp &nbsp
-            <a href="./publication.html"><B style="font-size:20px">Publications</B></a> &nbsp &nbsp
-            <a href="./openings.html"><B style="font-size:20px">Open Positions</B></a> &nbsp &nbsp
-            <!-- <a href="./misc.html"><B style="font-size:20px">Misc.</B></a> -->
+            <a href="./index.html">Home</a>
+            <a href="./group.html">Group</a>
+            <a href="./teaching.html">Teaching</a>
+            <span class="active" style="font-weight: 700; color: var(--primary-color);">Talks</span>
+            <a href="./publication.html">Publications</a>
+            <a href="./openings.html">Open Positions</a>
         </div>
+
+        <h1>Invited Talks</h1>
+        <h3>Selected talks after 2024, with similar contents merged.</h3>
+
+        <div class="talk-card">
+            <div class="talk-header">
+                <div class="talk-title">Harnessing Large Language Models in Financial Technologies</div>
+                <a href="talk/EFS.pdf" target="_blank" class="badge">Slides</a>
+            </div>
+            <ul class="venue-list">
+                <li class="venue-item">
+                    <span class="venue-date">2025.09</span>
+                    <span class="venue-loc">EPFL Alumni Shenzhen / Great Bay Area Gathering. Shenzhen, China.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="talk-card">
+            <div class="talk-header">
+                <div class="talk-title">Enhancing Efficacy and Stability in Machine Unlearning with Dual Optimizers</div>
+                <a href="talk/DualOptim.pdf" target="_blank" class="badge">Slides</a>
+            </div>
+            <ul class="venue-list">
+                <li class="venue-item">
+                    <span class="venue-date">2025.04</span>
+                    <span class="venue-loc">Beijing University of Posts and Telecommunications. Beijing, China.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="talk-card">
+            <div class="talk-header">
+                <div class="talk-title">Differentially Private SGD under the Hidden State Assumption</div>
+                <a href="talk/DPHSA.pdf" target="_blank" class="badge">Slides</a>
+            </div>
+            <ul class="venue-list">
+                <li class="venue-item">
+                    <span class="venue-date">2024.12</span>
+                    <span class="venue-loc">AIMS Conference. Abu Dhabi, United Arab Emirates.</span>
+                </li>
+                <li class="venue-item">
+                    <span class="venue-date">2024.08</span>
+                    <span class="venue-loc">Zhejiang University. Hangzhou, China.</span>
+                </li>
+                <li class="venue-item">
+                    <span class="venue-date">2024.07</span>
+                    <span class="venue-loc">Shanghai Jiao Tong University. Shanghai, China.</span>
+                </li>
+                <li class="venue-item">
+                    <span class="venue-date">2024.07</span>
+                    <span class="venue-loc">École Polytechnique Fédérale de Lausanne. Lausanne, Switzerland.</span>
+                </li>
+            </ul>
+        </div>
+
     </div>
-
-    <table width="100%" border="0" align="center">
-        <tr>
-            <td width="20%"></td>
-            <td width="60%">
-                <div id="teaching" class="contents">
-                    <h1> Invited Talks </h1>
-                    <h3> Selected talks after 2024, with similar contents merged.</h3>
-                    <ul>
-                        <li><a href="talk/EFS.pdf" target="_blank">Harnessing Large Language Models in Financial Technologies</a></li><br>
-                        <ul>
-                            <li>2025.09. EPFL Alumni Shenzhen / Great Bay Area Gathering. Shenzhen, China.</li><br>
-                        </ul>
-                        <li><a href="talk/DualOptim.pdf" target="_blank">Enhancing Eﬀicacy and Stability in Machine Unlearning with Dual Optimizers</a></li><br>
-                        <ul>
-                            <li>2025.04. Beijing University of Posts and Telecommunications. Beijing, China.</li><br>
-                        </ul>
-                        <li><a href="talk/DPHSA.pdf">Differentially Private SGD under the Hidden State Assumption</a></li><br>
-                        <ul>
-                            <li>2024.12. AIMS Conference. Abu Dhabi, United Arab Emirates.</li><br>
-                            <li>2024.08. Zhejiang University. Hangzhou, China.</li><br>
-                            <li>2024.07. Shanghai Jiao Tong University. Shanghai, China.</li><br>
-                            <li>2024.07. École Polytechnique Fédérale de Lausanne. Lausanne, Switzerland.</li>
-                        </ul>
-                    </ul>
-                </div>
-            </td>
-            <td width="20%"></td>
-        </tr>
-    </table>
-
-  </body>
+</body>
 </html>
