@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.2</title>
+    <script>
+        function init() {
+            var i, N, s;
+            N = 50; 
+            
+            s = "The integers from 1 to " + N + " are listed below: <br/>";
+            s += "^ the integer is divisible by 2 but not divisible by 3 <br/>";
+            s += "* the integer is a valid floor number <br/>";
+            
+            for (i = 1; i <= N; i++) {
+                s += i;
+                
+                // Divisible by 2 but not 3
+                if (i % 2 === 0 && i % 3 !== 0) {
+                    s += "^";
+                }
+                
+                // Valid floor check
+                var isValidFloor = false;
+                if (i !== 13 && (i % 10 !== 4) && (Math.floor(i / 10) !== 4)) {
+                    isValidFloor = true;
+                }
+                
+                if (isValidFloor) {
+                    s += "*";
+                }
+                
+                s += "<br/>";
+            }
+            
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

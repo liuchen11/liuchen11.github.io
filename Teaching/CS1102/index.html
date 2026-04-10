@@ -12,8 +12,9 @@
       function init(){
         document.getElementById("list-html").style.display = "none";
         document.getElementById("list-js").style.display = "none";
-        expand = {'list-html': false, 'list-js': false};
-        display = {'list-html': 'block', 'list-js': 'block'};
+        document.getElementById("list-tutorial").style.display = "none";
+        expand = {'list-html': false, 'list-js': false, 'list-tutorial': false};
+        display = {'list-html': 'block', 'list-js': 'block', 'list-tutorial': 'block'};
       }
 
       function expandorhide(text_name, list_name){
@@ -101,7 +102,11 @@
             </ul>
             <h3>Tutorial Exercises&nbsp; &nbsp; <a href="#" onclick="expandorhide('fold-tutorial', 'list-tutorial')"><span id="fold-tutorial">[Display Codes]</span></a></h3>
             <ul id="list-tutorial">
-              <li></li>
+              <li><a href="Tutorial/Dynamic_Content/index.html" target="_blank">Javascript 1: Dynamic Content</a></li><br>
+              <li><a href="Tutorial/Conditionals_Loops/index.html" target="_blank">Javascript 2: Conditionals and Loops</a></li><br>
+              <li><a href="Tutorial/Random_Number_Loops/index.html" target="_blank">Javascript 3: Random Number and While Loops</a></li><br>
+              <li><a href="Tutorial/Array/index.html" target="_blank">Javascript 4: Array</a></li><br>
+              <li><a href="Tutorial/Function/index.html" target="_blank">Javascript 5: Function</a></li><br>
             </ul>
           </div>
         </td>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.3</title>
+    <script>
+        function randomLowercaseCharacter() {
+            var d = Math.floor(Math.random() * 26);
+            return String.fromCharCode(97 + d); // 97 is 'a' in ASCII
+        }
+
+        function randomUppercaseCharacter() {
+            var d = Math.floor(Math.random() * 26);
+            return String.fromCharCode(65 + d); // 65 is 'A' in ASCII
+        }
+
+        function init() {
+            var s = "<b>Part 1: Random Lowercase Alphabet</b><br/>";
+            s += randomLowercaseCharacter() + "<br/><br/>";
+
+            s += "<b>Part 2 & 3: Generate until 'Z' is displayed</b><br/>";
+            var countTotal = 0;
+            var countA = 0;
+            var char = "";
+            
+            while (char !== 'Z') {
+                char = randomUppercaseCharacter();
+                countTotal++;
+                s += char + " ";
+                if (char === 'A') {
+                    countA++;
+                }
+            }
+            
+            s += "<br/><br/>The total number of generated characters = " + countTotal + "<br/>";
+            s += "The total number of 'A' generated = " + countA;
+
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

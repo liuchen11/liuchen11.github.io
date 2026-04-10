@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1.4</title>
+    <script>
+        function greeting() {
+            var s, x;
+            s = "8";
+            x = 8;
+            document.getElementById("message1").innerHTML = s + s + x;
+            document.getElementById("message2").innerHTML = s + (x + x);
+            document.getElementById("message3").innerHTML = s + x + s;
+        }
+    </script>
+</head>
+<body onload="greeting();">
+    <div id="message1"></div>
+    <div id="message2"></div>
+    <div id="message3"></div>
+</body>
+</html>

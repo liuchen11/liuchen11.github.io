@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.1</title>
+    <script>
+        var fruit = [];
+        
+        function addFruit() {
+            var inputVal = document.getElementById("textinput").value;
+            if(inputVal.trim() !== "") {
+                fruit.push(inputVal);
+                document.getElementById("textinput").value = ""; // Clear input box
+                displayFruits(true); // Default to FIFO
+            }
+        }
+
+        function displayFruits(isFIFO) {
+            var s = "<ul>";
+            
+            // Get at most the last 4 items
+            var start = Math.max(0, fruit.length - 4); 
+            var fruitsToDisplay = fruit.slice(start);
+            
+            // Reverse the display array if LIFO is requested
+            if (!isFIFO) {
+                fruitsToDisplay.reverse();
+            }
+
+            for (var i = 0; i < fruitsToDisplay.length; i++) {
+                s += "<li>" + fruitsToDisplay[i] + "</li>";
+            }
+            s += "</ul>";
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body>
+    Input a fruit that you like:
+    <input type="text" id="textinput" />
+    <button id="button_add" onclick="addFruit();">Add</button>
+    <br/><br/>
+    <button onclick="displayFruits(true);">First In First Out</button>
+    <button onclick="displayFruits(false);">Last In First Out</button>
+    
+    <h2>The fruits that you like</h2>
+    <div id="result"></div>
+</body>
+</html>

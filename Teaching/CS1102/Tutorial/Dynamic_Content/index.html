@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript 1 - Summary</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            color: #333;
+            background-color: #f4f7f6;
+        }
+        h1, h2 { color: #2c3e50; }
+        ul { 
+            list-style-type: none; 
+            padding-left: 0; 
+        }
+        li { 
+            margin-bottom: 25px; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        /* Highlight task box on hover */
+        li:hover {
+            border-color: #007BFF;
+            box-shadow: 0 4px 8px rgba(0,123,255,0.15);
+            background-color: #f8fbff;
+        }
+        .task-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+        .btn { 
+            padding: 8px 15px; 
+            margin-right: 10px; 
+            cursor: pointer; 
+            color: white; 
+            border: none; 
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn-toggle { background-color: #6c757d; }
+        .btn-toggle:hover { background-color: #5a6268; }
+        .btn-link { background-color: #28a745; }
+        .btn-link:hover { background-color: #218838; }
+        .code-container { 
+            display: none; 
+            margin-top: 15px; 
+            border-radius: 5px; 
+            border: 1px solid #222;
+        }
+        /* Override Prism margin to fit nicely in the container */
+        pre[class*="language-"] {
+            margin: 0;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.style.display === "none" || codeBlock.style.display === "") {
+                codeBlock.style.display = "block";
+            } else {
+                codeBlock.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript 1 - Dynamic Content</h1>
+    
+    <h2>Part 1</h2>
+    <ul>
+        <li>
+            <div class="task-title">Task 1.1: Output a Message on a Pop-up Window</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-1')">Show / Hide Source Code</button>
+            <a href="1-1.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-1" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.1&lt;/title&gt;
+    &lt;script&gt;
+        function greeting() {
+            alert("Hello!");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="greeting();"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 1.2: Variables</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-2')">Show / Hide Source Code</button>
+            <a href="1-2.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-2" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.2&lt;/title&gt;
+    &lt;script&gt;
+        function greeting() {
+            var s;
+            s = "Hello";
+            alert(s);
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="greeting();"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 1.3: Change HTML Content</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-3')">Show / Hide Source Code</button>
+            <a href="1-3.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-3" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.3&lt;/title&gt;
+    &lt;script&gt;
+        function greeting() {
+            var s;
+            s = "Hello";
+            document.getElementById("message").innerHTML = s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="greeting();"&gt;
+    &lt;div id="message"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 1.4: String vs Number</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-4')">Show / Hide Source Code</button>
+            <a href="1-4.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-4" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.4&lt;/title&gt;
+    &lt;script&gt;
+        function greeting() {
+            var s, x;
+            s = "8";
+            x = 8;
+            document.getElementById("message1").innerHTML = s + s + x;
+            document.getElementById("message2").innerHTML = s + (x + x);
+            document.getElementById("message3").innerHTML = s + x + s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="greeting();"&gt;
+    &lt;div id="message1"&gt;&lt;/div&gt;
+    &lt;div id="message2"&gt;&lt;/div&gt;
+    &lt;div id="message3"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 1.5: Get the Input from the User</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-5')">Show / Hide Source Code</button>
+            <a href="1-5.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-5" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.5&lt;/title&gt;
+    &lt;script&gt;
+        function greeting() {
+            var firstname;
+            firstname = prompt("What is your first name?");
+            document.getElementById("message").innerHTML = "Hello " + firstname + "!";
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="greeting();"&gt;
+    &lt;div id="message"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+    </ul>
+
+    <h2>Part 2</h2>
+    <ul>
+        <li>
+            <div class="task-title">Task 2.1: First and Last Name Formats</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-2-1')">Show / Hide Source Code</button>
+            <a href="2-1.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-2-1" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 2.1&lt;/title&gt;
+    &lt;script&gt;
+        function greeting() {
+            var firstname, lastname;
+            firstname = prompt("What is your first name?");
+            lastname = prompt("What is your last name?");
+            
+            var output = "Hello " + lastname + " " + firstname + "!&lt;br/&gt;&lt;br/&gt;";
+            output += "Different ways to display your name:&lt;br/&gt;";
+            output += firstname + " " + lastname + "&lt;br/&gt;";
+            output += lastname + ", " + firstname;
+            
+            document.getElementById("message").innerHTML = output;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="greeting();"&gt;
+    &lt;div id="message"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 2.2: Update Other HTML Elements (Fruit List)</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-2-2')">Show / Hide Source Code</button>
+            <a href="2-2.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-2-2" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 2.2&lt;/title&gt;
+    &lt;script&gt;
+        function addFruit() {
+            var fruit, s;
+            s = document.getElementById("fruit").innerHTML;
+            fruit = prompt("Enter a fruit that you like");
+            
+            // Checks if user actually entered something
+            if (fruit !== null &amp;&amp; fruit !== "") {
+                document.getElementById("fruit").innerHTML = "&lt;li&gt;" + fruit + "&lt;/li&gt;" + s;
+            }
+        }
+        
+        function clearFruits() {
+            document.getElementById("fruit").innerHTML = "";
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;
+        My favorite fruits
+        &lt;span style="cursor:pointer; color:blue;" onclick="addFruit();"&gt;[Add]&lt;/span&gt;
+        &lt;span style="cursor:pointer; color:red;" onclick="clearFruits();"&gt;[Clear]&lt;/span&gt;
+    &lt;/h2&gt;
+    &lt;ul id="fruit"&gt;&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+</html>

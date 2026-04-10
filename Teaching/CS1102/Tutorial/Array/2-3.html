@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.3</title>
+    <script>
+        function init() {
+            var sumDist = [];
+            for (var i = 2; i <= 12; i++) {
+                sumDist[i] = 0;
+            }
+            
+            var allAppeared = false;
+            var count = 0;
+            var s = "The outcomes of the dice throws: <br/>";
+            var d1, d2, currentSum;
+            
+            // Keep throwing until all sums (2 through 12) have appeared
+            while (!allAppeared) {
+                count++;
+                d1 = Math.floor(Math.random() * 6) + 1;
+                d2 = Math.floor(Math.random() * 6) + 1;
+                currentSum = d1 + d2;
+                sumDist[currentSum]++;
+                
+                s += count + ". Dice 1: " + d1 + ", Dice 2: " + d2 + " (Sum: " + currentSum + ")<br/>";
+                
+                allAppeared = true;
+                for (var j = 2; j <= 12; j++) {
+                    if (sumDist[j] === 0) {
+                        allAppeared = false;
+                        break; // Still missing at least one sum
+                    }
+                }
+            }
+            
+            s += "<br/> The distribution of the sum of the dice: <br/>";
+            for (var k = 2; k <= 12; k++) {
+                s += "Sum " + k + ": " + sumDist[k] + " time(s)<br/>";
+            }
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

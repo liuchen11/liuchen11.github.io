@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1.1</title>
+    <script>
+        function init() {
+            var x = parseInt(prompt("Please enter a floor number:"));
+            var isValid = false;
+            
+            // Check if input is between 1 and 50
+            if (x >= 1 && x <= 50) {
+                // Check for number 13, and digit 4 in ones and tens places
+                if (x !== 13 && (x % 10 !== 4) && (Math.floor(x / 10) !== 4)) {
+                    isValid = true;
+                }
+            }
+            
+            if (isValid) {
+                document.getElementById("result").innerHTML = "Welcome! Please enter! Take the elevator to go to floor " + x;
+            } else {
+                document.getElementById("result").innerHTML = "Your input " + x + " is NOT a valid floor number!";
+            }
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

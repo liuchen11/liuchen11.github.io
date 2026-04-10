@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.2</title>
+    <script>
+        function init() {
+            var count = 0;
+            var d1 = 0, d2 = 0, sum = 0;
+            var s = "The dice throw outcomes are listed below: <br/>";
+            
+            while (sum !== 7) {
+                d1 = Math.floor(Math.random() * 6) + 1;
+                d2 = Math.floor(Math.random() * 6) + 1;
+                sum = d1 + d2;
+                count++;
+                s += count + ". " + d1 + " + " + d2 + " = " + sum + "<br/>";
+            }
+            
+            s += "The total number of dice throws = " + count;
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

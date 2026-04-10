@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.2</title>
+    <script>
+        function init() {
+            var morningPositions = [];
+            var eveningPositions = [];
+            var currentHeight = 0;
+            var day = 0;
+            var s = "<b>Frog Escape Log:</b><br/><br/>";
+            
+            while (currentHeight < 30) {
+                day++;
+                
+                // Morning action: climbs 3m
+                currentHeight += 3;
+                morningPositions.push(currentHeight);
+                
+                if (currentHeight >= 30) {
+                    eveningPositions.push(currentHeight); // Escaped!
+                    break;
+                }
+                
+                // Evening action: falls 2m
+                currentHeight -= 2;
+                eveningPositions.push(currentHeight);
+            }
+            
+            for (var i = 0; i < day; i++) {
+                s += "Day " + (i + 1) + ": ";
+                s += "Morning position = " + morningPositions[i] + "m, ";
+                if (i === day - 1 && morningPositions[i] >= 30) {
+                    s += "Evening position = Escaped!<br/>";
+                } else {
+                    s += "Evening position = " + eveningPositions[i] + "m<br/>";
+                }
+            }
+            s += "<br/><b>Total days to escape: " + day + "</b>";
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

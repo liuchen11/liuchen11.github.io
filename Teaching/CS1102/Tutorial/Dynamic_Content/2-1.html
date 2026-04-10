@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.1</title>
+    <script>
+        function greeting() {
+            var firstname, lastname;
+            firstname = prompt("What is your first name?");
+            lastname = prompt("What is your last name?");
+            
+            var output = "Hello " + lastname + " " + firstname + "!<br/><br/>";
+            output += "Different ways to display your name:<br/>";
+            output += firstname + " " + lastname + "<br/>";
+            output += lastname + ", " + firstname;
+            
+            document.getElementById("message").innerHTML = output;
+        }
+    </script>
+</head>
+<body onload="greeting();">
+    <div id="message"></div>
+</body>
+</html>

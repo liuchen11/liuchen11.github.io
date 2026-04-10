@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript 4 - Summary</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            color: #333;
+            background-color: #f4f7f6;
+        }
+        h1, h2 { color: #2c3e50; }
+        ul { 
+            list-style-type: none; 
+            padding-left: 0; 
+        }
+        li { 
+            margin-bottom: 25px; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        li:hover {
+            border-color: #007BFF;
+            box-shadow: 0 4px 8px rgba(0,123,255,0.15);
+            background-color: #f8fbff;
+        }
+        .task-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+        .btn { 
+            padding: 8px 15px; 
+            margin-right: 10px; 
+            cursor: pointer; 
+            color: white; 
+            border: none; 
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn-toggle { background-color: #6c757d; }
+        .btn-toggle:hover { background-color: #5a6268; }
+        .btn-link { background-color: #28a745; }
+        .btn-link:hover { background-color: #218838; }
+        .code-container { 
+            display: none; 
+            margin-top: 15px; 
+            border-radius: 5px; 
+            border: 1px solid #222;
+        }
+        pre[class*="language-"] {
+            margin: 0;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.style.display === "none" || codeBlock.style.display === "") {
+                codeBlock.style.display = "block";
+            } else {
+                codeBlock.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript 4 - Array</h1>
+    
+    <h2>Part 1</h2>
+    <ul>
+        <li>
+            <div class="task-title">Task 1.1: List the Fruits</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-1')">Show / Hide Source Code</button>
+            <a href="1-1.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-1" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.1&lt;/title&gt;
+    &lt;script&gt;
+        var fruit = [];
+        function addFruit() {
+            var s, i;
+            fruit[fruit.length] = document.getElementById("textinput").value;
+            s = "&lt;ul&gt;";
+            for (i = 0; i &lt; fruit.length; i++) {
+                s += "&lt;li&gt;" + fruit[i] + "&lt;/li&gt;";
+            }
+            s += "&lt;/ul&gt;";
+            document.getElementById("result").innerHTML = s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Input a fruit that you like:
+    &lt;input type="text" id="textinput" /&gt;
+    &lt;button id="button_add" onclick="addFruit();"&gt;Add&lt;/button&gt;
+    &lt;h2&gt;The fruits that you like&lt;/h2&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 1.2: Calculate Fibonacci Numbers</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-2')">Show / Hide Source Code</button>
+            <a href="1-2.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-2" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.2&lt;/title&gt;
+    &lt;script&gt;
+        function generateFibonacci() {
+            var F = [1, 1];
+            var input, s, i, N;
+            input = document.getElementById("textinput").value;
+            
+            if (isNaN(input) || input.trim() === "") {
+                s = "Please enter a number!";
+            } else {
+                N = Number(input);
+                if (N !== Math.floor(N)) {
+                    s = "Please enter an integer!";
+                } else if (N &lt;= 0) {
+                    s = "Please enter a positive integer!";
+                } else {
+                    for (i = 2; i &lt; N; i++) {
+                        F[i] = F[i-1] + F[i-2];
+                    }
+                    s = "The first " + N + " Fibonacci number(s): &lt;br/&gt;";
+                    for (i = 0; i &lt; N; i++) {
+                        s += F[i] + "&lt;br/&gt;";
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Enter a non-negative integer:
+    &lt;input type="text" id="textinput" /&gt;
+    &lt;button id="button_generate" onclick="generateFibonacci();"&gt;Generate&lt;/button&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 1.3: Compute Distributions of Dice Throws</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-1-3')">Show / Hide Source Code</button>
+            <a href="1-3.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-1-3" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 1.3&lt;/title&gt;
+    &lt;script&gt;
+        function init() {
+            var sum = [];
+            var i, d, s;
+            
+            for (i = 1; i &lt;= 6; i++) {
+                sum[i] = 0;
+            }
+            
+            s = "The outcomes of the dice throws: &lt;br/&gt;";
+            for (i = 1; i &lt;= 20; i++) {
+                d = Math.floor(Math.random() * 6) + 1;
+                sum[d]++;
+                s += i + ". " + d + "&lt;br/&gt;";
+            }
+            
+            s += "&lt;br/&gt; The distribution of the dice outcomes: &lt;br/&gt;";
+            for (i = 1; i &lt;= 6; i++) {
+                s += i + ": " + sum[i] + "&lt;br/&gt;";
+            }
+            document.getElementById("result").innerHTML = s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="init();"&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+    </ul>
+    
+    <h2>Part 2</h2>
+    <ul>
+        <li>
+            <div class="task-title">Task 2.1: Array Ordering (FIFO/LIFO & Max 4)</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-2-1')">Show / Hide Source Code</button>
+            <a href="2-1.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-2-1" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 2.1&lt;/title&gt;
+    &lt;script&gt;
+        var fruit = [];
+        
+        function addFruit() {
+            var inputVal = document.getElementById("textinput").value;
+            if(inputVal.trim() !== "") {
+                fruit.push(inputVal);
+                document.getElementById("textinput").value = "";
+                displayFruits(true);
+            }
+        }
+
+        function displayFruits(isFIFO) {
+            var s = "&lt;ul&gt;";
+            var start = Math.max(0, fruit.length - 4); 
+            var fruitsToDisplay = fruit.slice(start);
+            
+            if (!isFIFO) {
+                fruitsToDisplay.reverse();
+            }
+
+            for (var i = 0; i &lt; fruitsToDisplay.length; i++) {
+                s += "&lt;li&gt;" + fruitsToDisplay[i] + "&lt;/li&gt;";
+            }
+            s += "&lt;/ul&gt;";
+            document.getElementById("result").innerHTML = s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Input a fruit that you like:
+    &lt;input type="text" id="textinput" /&gt;
+    &lt;button id="button_add" onclick="addFruit();"&gt;Add&lt;/button&gt;
+    &lt;br/&gt;&lt;br/&gt;
+    &lt;button onclick="displayFruits(true);"&gt;First In First Out&lt;/button&gt;
+    &lt;button onclick="displayFruits(false);"&gt;Last In First Out&lt;/button&gt;
+    
+    &lt;h2&gt;The fruits that you like&lt;/h2&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 2.2: Frog in a Well (Array Simulation)</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-2-2')">Show / Hide Source Code</button>
+            <a href="2-2.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-2-2" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 2.2&lt;/title&gt;
+    &lt;script&gt;
+        function init() {
+            var morningPositions = [];
+            var eveningPositions = [];
+            var currentHeight = 0;
+            var day = 0;
+            var s = "&lt;b&gt;Frog Escape Log:&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;";
+            
+            while (currentHeight &lt; 30) {
+                day++;
+                
+                currentHeight += 3;
+                morningPositions.push(currentHeight);
+                
+                if (currentHeight &gt;= 30) {
+                    eveningPositions.push(currentHeight);
+                    break;
+                }
+                
+                currentHeight -= 2;
+                eveningPositions.push(currentHeight);
+            }
+            
+            for (var i = 0; i &lt; day; i++) {
+                s += "Day " + (i + 1) + ": ";
+                s += "Morning position = " + morningPositions[i] + "m, ";
+                if (i === day - 1 &amp;&amp; morningPositions[i] &gt;= 30) {
+                    s += "Evening position = Escaped!&lt;br/&gt;";
+                } else {
+                    s += "Evening position = " + eveningPositions[i] + "m&lt;br/&gt;";
+                }
+            }
+            s += "&lt;br/&gt;&lt;b&gt;Total days to escape: " + day + "&lt;/b&gt;";
+            document.getElementById("result").innerHTML = s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="init();"&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+
+        <li>
+            <div class="task-title">Task 2.3: Distribution of Two Dice Throws</div>
+            <button class="btn btn-toggle" onclick="toggleCode('code-2-3')">Show / Hide Source Code</button>
+            <a href="2-3.html" target="_blank" class="btn btn-link">Open HTML File</a>
+            <div id="code-2-3" class="code-container">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Task 2.3&lt;/title&gt;
+    &lt;script&gt;
+        function init() {
+            var sumDist = [];
+            for (var i = 2; i &lt;= 12; i++) {
+                sumDist[i] = 0;
+            }
+            
+            var allAppeared = false;
+            var count = 0;
+            var s = "The outcomes of the dice throws: &lt;br/&gt;";
+            var d1, d2, currentSum;
+            
+            while (!allAppeared) {
+                count++;
+                d1 = Math.floor(Math.random() * 6) + 1;
+                d2 = Math.floor(Math.random() * 6) + 1;
+                currentSum = d1 + d2;
+                sumDist[currentSum]++;
+                
+                s += count + ". Dice 1: " + d1 + ", Dice 2: " + d2 + " (Sum: " + currentSum + ")&lt;br/&gt;";
+                
+                allAppeared = true;
+                for (var j = 2; j &lt;= 12; j++) {
+                    if (sumDist[j] === 0) {
+                        allAppeared = false;
+                        break;
+                    }
+                }
+            }
+            
+            s += "&lt;br/&gt; The distribution of the sum of the dice: &lt;br/&gt;";
+            for (var k = 2; k &lt;= 12; k++) {
+                s += "Sum " + k + ": " + sumDist[k] + " time(s)&lt;br/&gt;";
+            }
+            document.getElementById("result").innerHTML = s;
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="init();"&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+</html>

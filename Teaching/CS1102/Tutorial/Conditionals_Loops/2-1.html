@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2.1</title>
+    <script>
+        function init() {
+            var x = parseInt(prompt("Please enter a floor number:"));
+            var isValid = false;
+            
+            if (x >= 1 && x <= 50) {
+                if (x !== 13 && (x % 10 !== 4) && (Math.floor(x / 10) !== 4)) {
+                    isValid = true;
+                }
+            }
+            
+            var message = "";
+            if (isValid) {
+                message = "Welcome! Please enter! <br/>";
+                if (x >= 1 && x <= 15) {
+                    message += "Please proceed to take the lift on the left to go to floor " + x;
+                } else if (x >= 16 && x <= 28) {
+                    message += "Please proceed to take the lift on the middle to go to floor " + x;
+                } else if (x >= 29 && x <= 50) {
+                    message += "Please proceed to take the lift on the right to go to floor " + x;
+                }
+            } else {
+                message = "Your input " + x + " is NOT a valid floor number!";
+            }
+            
+            document.getElementById("result").innerHTML = message;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

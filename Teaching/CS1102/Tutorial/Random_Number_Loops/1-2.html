@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1.2</title>
+    <script>
+        function init() {
+            var count = 0, d = 0, s = "";
+            s = "The dice throw outcomes are listed below: <br/>";
+            
+            while (d !== 6) {
+                d = Math.floor(Math.random() * 6) + 1;
+                count++;
+                s += count + ". " + d + "<br/>";
+            }
+            
+            s += "The total number of dice throws = " + count;
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>

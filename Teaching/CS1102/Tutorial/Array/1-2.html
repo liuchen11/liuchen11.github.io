@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1.2</title>
+    <script>
+        function generateFibonacci() {
+            var F = [1, 1];
+            var input, s, i, N;
+            input = document.getElementById("textinput").value;
+            
+            // Check if input is a valid number and not empty
+            if (isNaN(input) || input.trim() === "") {
+                s = "Please enter a number!";
+            } else {
+                N = Number(input);
+                if (N !== Math.floor(N)) {
+                    s = "Please enter an integer!";
+                } else if (N <= 0) {
+                    s = "Please enter a positive integer!";
+                } else {
+                    for (i = 2; i < N; i++) {
+                        F[i] = F[i-1] + F[i-2];
+                    }
+                    s = "The first " + N + " Fibonacci number(s): <br/>";
+                    for (i = 0; i < N; i++) {
+                        s += F[i] + "<br/>";
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body>
+    Enter a non-negative integer:
+    <input type="text" id="textinput" />
+    <button id="button_generate" onclick="generateFibonacci();">Generate</button>
+    <div id="result"></div>
+</body>
+</html>

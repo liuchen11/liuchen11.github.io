@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1.2</title>
+    <script>
+        function init() {
+            var i, N, s;
+            N = 10;
+            s = "The integers from 1 to " + N + " are listed below: <br/>";
+            
+            for (i = 1; i <= N; i++) {
+                s = s + i + "<br/>";
+            }
+            
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div id="result"></div>
+</body>
+</html>
