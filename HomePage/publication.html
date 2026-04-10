@@ -576,6 +576,17 @@
 
         <div id="preprints" class="tab-content">
             <div class="pub-item">
+                <h4 class="pub-title">PDA: Text-Augmented Defense Framework for Robust Vision-Language Models against Adversarial Image Attacks</h4>
+                <div class="pub-authors">Jingning Xu, Haochen Luo, <u>Chen Liu</u>.</div>
+                <div class="pub-links">
+                    <button class="badge abstract-toggle" onclick="toggleAbstract('abs-PDA', this)">Abstract</button>
+                    <a href="doc/PDA/PDA_PDF.pdf" target="_blank" class="badge pdf">PDF</a>
+                </div>
+                <div id="abs-PDA" class="abstract-content">
+                    Vision-language models (VLMs) are vulnerable to adversarial image perturbations. Existing works based on adversarial training against task-specific adversarial examples are computationally expensive and often fail to generalize to unseen attack types. To address these limitations, we introduce Paraphrase-Decomposition-Aggregation (PDA), a training-free defense framework that leverages text augmentation to enhance VLM robustness under diverse adversarial image attacks. PDA performs prompt paraphrasing, question decomposition, and consistency aggregation entirely at test time, thus requiring no modification on the underlying models. To balance robustness and efficiency, we instantiate PDA as invariants that reduce the inference cost while retaining most of its robustness gains. Experiments on multiple VLM architectures and benchmarks for visual question answering, classification, and captioning show that PDA achieves consistent robustness gains against various adversarial perturbations while maintaining competitive clean accuracy, establishing a generic, strong and practical defense framework for VLMs during inference.
+                </div>
+            </div>
+            <div class="pub-item">
                 <h4 class="pub-title">From Natural Language to Executable Option Strategies via Large Language Models</h4>
                 <div class="pub-authors">Haochen Luo, Zhengzhao Lai, Junjie Xu, Yifan Li, Tang Pok Hin, Yuan Zhang, <u>Chen Liu</u>.</div>
                 <div class="pub-links">
