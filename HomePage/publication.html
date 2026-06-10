@@ -299,11 +299,13 @@
             
             <div class="pub-item">
                 <h4 class="pub-title">DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models</h4>
-                <div class="pub-authors">Xuyang Zhong, Qizhang Li, Steven Yiwen Guo, <u>Chen Liu</u>.</div>
+                <div class="pub-authors">Xuyang Zhong, Qizhang Li, Yiwen Guo, <u>Chen Liu</u>.</div>
                 <div class="pub-venue">International Conference on Machine Learning (ICML) 2026.</div>
                 <div class="pub-links">
                     <button class="badge abstract-toggle" onclick="toggleAbstract('abs-DualOptim+', this)">Abstract</button>
                     <a href="./doc/DualOptimPlus/DualOptimPlus_PDF.pdf" target="_blank" class="badge pdf">PDF</a>
+                    <a href="./doc/DualOptimPlus/DualOptimPlus_Poster.pdf" target="_blank" class="badge poster">Poster</a>
+                    <a href="https://github.com/CityU-MLO/DualOptimPlus" target="_blank" class="badge code">Code</a>
                 </div>
                 <div id="abs-DualOptim+" class="abstract-content">
                     We propose DualOptim+, a novel optimization framework for improving machine unlearning in large language models. It introduces a base state to capture common representations shared by forgetting and retaining objectives and delta states to preserve objective-specific residuals. This architecture allows the optimizer to adaptively bridge shared and decoupled states based on the directional conflict between forgetting and retaining gradients. We further introduce DualOptim+ 8bit, a quantized variant that reduces memory overhead without compromising performance. Extensive experiments across fictitious, real-world, and safety alignment tasks demonstrate that DualOptim+ consistently achieves a superior trade-off between forgetting efficacy and model utility.
@@ -589,6 +591,17 @@
         </div>
 
         <div id="preprints" class="tab-content">
+            <div class="pub-item">
+                <h4 class="pub-title">A Full-Pipeline Framework for Evaluating Membership Inference Attacks in Machine Learning</h4>
+                <div class="pub-authors">Ding Chen<sup>*</sup>, Xinwen Cheng<sup>*</sup>, Xuyang Zhong<sup>*</sup>, Xinping Chen, Xiaolin Huang, <u>Chen Liu</u>.</div>
+                <div class="pub-links">
+                    <button class="badge abstract-toggle" onclick="toggleAbstract('abs-MIABench', this)">Abstract</button>
+                    <a href="doc/MIABench/MIABench_PDF.pdf" target="_blank" class="badge pdf">PDF</a>
+                </div>
+                <div id="abs-MIABench" class="abstract-content">
+                    While Membership Inference Attacks (MIAs) are the prevailing method for identifying training data, their application has expanded into privacy auditing and machine unlearning. Nevertheless, the field lacks a systematic framework for evaluating how different contexts affect MIA efficacy. Without such a characterization, practitioners risk deploying algorithms that perform well on benchmarks but become statistically irrelevant when faced with the nuances of specific, real-world datasets. To bridge this gap and provide actionable insights, we introduce a comprehensive evaluation framework that systematically characterizes privacy risks across the entire machine learning pipeline, spanning data, architectures, algorithms, and post-training modules. Designed to inherently capture diverse operational contexts, our framework rigorously evaluates state-of-the-art MIAs across a broad spectrum of training configurations. To account for varying misclassification costs in real-world deployments, we employ three complementary metrics: Balanced Accuracy for symmetric costs, alongside TPR at low FPR (or TNR at low FNR) for asymmetric scenarios where false alarms or missed detections are strictly penalized. Furthermore, recognizing that existing MIAs assume divergent adversary capabilities, we formalize two standardized threat models and adapt these attacks into corresponding variants to ensure an equitable benchmark. Extensive empirical evaluations demonstrate that the efficacy of specific MIA methodologies is highly sensitive to the assumed threat models and chosen evaluation metrics. Ultimately, we distill these findings into actionable guidelines and provide a ready-to-use auditing toolkit, empowering practitioners to conduct better privacy assessments.
+                </div>
+            </div>
             <div class="pub-item">
                 <h4 class="pub-title">PDA: Text-Augmented Defense Framework for Robust Vision-Language Models against Adversarial Image Attacks</h4>
                 <div class="pub-authors">Jingning Xu, Haochen Luo, <u>Chen Liu</u>.</div>
