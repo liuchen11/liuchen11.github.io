@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overview | MLO @ CityU</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600;700&display=swap">
     <style>
         /* --- Global Reset & Typography --- */
         :root {
@@ -78,22 +79,107 @@
             h1 { font-size: 2rem; }
             .nav { justify-content: center; gap: 15px; }
         }
+
+        /* ---  Logo --- */
+        .art-logo {
+            margin-left: auto; /* 将元素推至容器最右侧 */
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .intro-text a, .news-section a {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-color: rgba(0, 86, 179, 0.3);
+            text-underline-offset: 2px;
+        }
+
+        .intro-text a:hover, .news-section a:hover {
+            text-decoration-color: var(--primary-color);
+        }
+
+        /* --- News Section Styling --- */
+        .news-section {
+            margin-top: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .news-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--accent-bg);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: baseline;
+        }
+        
+        .news-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-left: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* The scrollable container */
+        .news-content {
+            max-height: 50vh; /* 最大高度为浏览器窗口高度的一半 */
+            overflow-y: auto; /* 内容超出时自动显示滚动条 */
+            padding-right: 15px;
+        }
+        
+        /* Custom scrollbar for webkit browsers */
+        .news-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .news-content::-webkit-scrollbar-track {
+            background: var(--accent-bg);
+            border-radius: 4px;
+        }
+        .news-content::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        .news-content::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        .news-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .news-list li {
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="nav">
-            <a href="./index.html">Home</a>
+            <span class="active" style="font-weight: 700; color: var(--primary-color);">Home</span>
             <a href="./members.html">Members</a>
+            <a href="./teaching.html">Teaching</a>
+            <a href="./talk.html">Talks</a>
             <a href="./publication.html">Publications</a>
             <a href="./openings.html">Open Positions</a>
+
+            <span class="art-logo">MLO Group</span>
         </div>
 
-        <h1>Machine Learning and Optimization Lab</h1>
+        <h1>Machine Learning and Optimization Group</h1>
 
         <div class="intro-text">
-            Machine Learning and Optimization Lab (MLO) at City University of Hong Kong primarily performs research in understanding and improving the reliability of modern machine learning systems. Our research interests include the following areas:
+            Machine Learning and Optimization (MLO) Group at City University of Hong Kong primarily is directed by <a href="../HomePage/index.html" target="_blank">Prof. Chen Liu</a> and performs research in understanding and improving the reliability of modern machine learning systems. Our research interests include the following areas:
             <ul class="interest-list">
                 <li>Robustness of multimodal large models.</li>
                 <li>Privacy-preserving machine learning systems.</li>
@@ -101,8 +187,40 @@
                 <li>Optimization and generalization properties of machine learning algorithms.</li>
                 <li>Interdisciplinary applications of machine learning, especially in the domain of FinTech.</li>
             </ul>
-            If you are interested in fundamental machine learning theory and algorithms, please check the page of <a href="./openings.html" style="text-decoration: underline; color: var(--primary-color);">open positions</a> for potential opportunities.
+            If you are interested in fundamental machine learning theory and algorithms, please check the page of <a href="./openings.html">open positions</a> for potential opportunities.
         </div>
+
+        <div class="news-section">
+            <h2>Recent News <span class="news-subtitle"></span></h2>
+            <div class="news-content">
+                <ul class="news-list">
+                    <li>2026/07: Xu Yang has successfully defended his PhD thesis entitled <a href=".">Robust Adaptation under Imperfect Data</a>, congratulations! He will be joining University of Oxford as a postdoctoral researcher.</li>
+                    <li>2026/07: Xuyang Zhong is awarded the prestigious Goertek Scholarship, only 11 PhD students from the whole university are selected this year, congratulations!</li>
+                    <li>2026/06: Chen Liu gives <a href="../talk/EFS.pdf">a talk about harnessing LLMs in financial technologies</a> in CityU-CityU DG joint summer school on AI for science.</li>
+                    <li>2026/05: One paper is accepted in ICML 2026.</li>
+                    <ul>
+                        <li><a href="../doc/DualOptimPlus/DualOptimPlus_PDF.pdf" target="_blank">DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models</a></li>
+                    </ul>
+                    <li>2026/04: Chen Liu gives <a href="../talk/DualOptim+.pdf" target="_blank">a talk about optimization in machine unlearning</a> in Shanghai Jiao Tong University.</li>
+                    <li>2026/01: One paper is accepted in ICLR 2026.</li>
+                    <ul>
+                        <li><a href="../doc/AlphaBench/AlphaBench_PDF.pdf" target="_blank">AlphaBench: Benchmarking Large Language Models in Formulaic Alpha Factor Mining</a></li>
+                    </ul>
+                    <li>2025/11: One paper is accepted in IEEE TPAMI.</li>
+                    <ul>
+                        <li><a href="../doc/SPGD/SPGD_PDF" target="_blank">Sparse-PGD: A Unified Framework for Sparse Adversarial Perturbations Generation</a></li>
+                    </ul>
+                    <li>2025/09: Three papers are accepted in NeurIPS 2025.</li>
+                    <ul>
+                        <li><a href="../doc/DualOptim/DualOptim_PDF.pdf" target="_blank">DualOptim: Enhancing Efficacy and Stability in Machine Unlearning with Dual Optimizers</a></li>
+                        <li><a href="../doc/FastSPGD/FastSPGD_PDF.pdf" target="_blank">Understanding and Improving Fast Adversarial Training against $l_0$ Bounded Perturbations</a></li>
+                        <li><a href="../doc/DataSelectionVLM/DataSelectionVLM_PDF.pdf" target="_blank">Data Selection Matters: Towards Robust Instruction Tuning of Large Multimodal Models</a></li>
+                    </ul>
+                    <li>2025/08: Xuyang Zhong is awarded Research Tuition Scholarship, Xu Yang is awarded Outstanding Academic Performance Award, congratulations!</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

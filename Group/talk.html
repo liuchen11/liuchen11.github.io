@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talks | Chen Liu @ CityU</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600;700&display=swap">
     <style>
         /* --- Global Reset & Typography --- */
         :root {
@@ -141,6 +142,16 @@
             .venue-item { flex-direction: column; gap: 2px; margin-bottom: 12px; }
             .venue-date { color: var(--primary-color); font-size: 0.9rem; }
         }
+
+        /* ---  Logo --- */
+        .art-logo {
+            margin-left: auto; /* 将元素推至容器最右侧 */
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
@@ -148,10 +159,13 @@
     <div class="container">
         <div class="nav">
             <a href="./index.html">Home</a>
+            <a href="./members.html">Members</a>
             <a href="./teaching.html">Teaching</a>
             <span class="active" style="font-weight: 700; color: var(--primary-color);">Talks</span>
-            <a href="../Group/index.html" target="_blank">Group</a>
-            <a href="../Group/publication.html" target="_blank">Publications</a>
+            <a href="./publication.html">Publications</a>
+            <a href="./openings.html">Open Positions</a>
+
+            <span class="art-logo">MLO Group</span>
         </div>
 
         <h1>Invited Talks</h1>
@@ -160,7 +174,7 @@
         <div class="talk-card">
             <div class="talk-header">
                 <div class="talk-title">Harnessing Large Language Models in Financial Technologies</div>
-                <a href="talk/EFS.pdf" target="_blank" class="badge">Slides</a>
+                <a href="../talk/EFS.pdf" target="_blank" class="badge">Slides</a>
             </div>
             <ul class="venue-list">
                 <li class="venue-item">
@@ -177,7 +191,7 @@
         <div class="talk-card">
             <div class="talk-header">
                 <div class="talk-title">Optimization Techniques of Machine Unlearning and Beyond</div>
-                <a href="talk/DualOptim+.pdf" target="_blank" class="badge">Slides</a>
+                <a href="../talk/DualOptim+.pdf" target="_blank" class="badge">Slides</a>
             </div>
             <ul class="venue-list">
                 <li class="venue-item">
@@ -190,7 +204,7 @@
         <div class="talk-card">
             <div class="talk-header">
                 <div class="talk-title">Enhancing Efficacy and Stability in Machine Unlearning with Dual Optimizers</div>
-                <a href="talk/DualOptim.pdf" target="_blank" class="badge">Slides</a>
+                <a href="../talk/DualOptim.pdf" target="_blank" class="badge">Slides</a>
             </div>
             <ul class="venue-list">
                 <li class="venue-item">
@@ -203,7 +217,7 @@
         <div class="talk-card">
             <div class="talk-header">
                 <div class="talk-title">Differentially Private SGD under the Hidden State Assumption</div>
-                <a href="talk/DPHSA.pdf" target="_blank" class="badge">Slides</a>
+                <a href="../talk/DPHSA.pdf" target="_blank" class="badge">Slides</a>
             </div>
             <ul class="venue-list">
                 <li class="venue-item">
