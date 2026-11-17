@@ -309,6 +309,22 @@
         </div>
 
         <div id="refereed-papers" class="tab-content active">
+
+            <div class="pub-item">
+                <h4 class="pub-title">LiveOption: Evaluating LLM Agents in Structured Option Trading with Nonlinear Payoffs</h4>
+                <div class="pub-authors">Haochen Luo, Yifan Li, Binh Minh An, Xiaolong Luo, Zhengzhao Lai, Yuan Zhang, Chen Liu.</div>
+                <div class="pub-venue">Neural Information Processing Systems (NeurIPS) 2026 (Evaluations and Datasets Track).</div>
+                <div class="pub-links">
+                    <button class="badge abstract-toggle" onclick="toggleAbstract('abs-LiveOption', this)">Abstract</button>
+                    <a href="../doc/LiveOption/LiveOption_PDF.pdf" target="_blank" class="badge pdf">PDF</a>
+                    <a href="../doc/LiveOption/LiveOption_Poster.pdf" target="_blank" class="badge poster">Poster</a>
+                    <a href="https://github.com/liveoption/LiveOption" target="_blank" class="badge code">Code</a>
+                    <a href="https://liveoption.github.io" target="_blank" class="badge web">Project Page</a>
+                </div>
+                <div id="abs-LiveOption" class="abstract-content">
+                    Large language models (LLMs) and multi-agent systems (MAS) have shown promise in financial decision-making, yet existing evaluations focus on equity trading and primarily assess directional prediction, overlooking the structural complexity of derivative markets. Option trading introduces fundamentally different challenges, including nonlinear payoffs and multi-leg strategy construction, requiring structured decisions rather than simple directional bets. We introduce LiveOption, an evaluation framework for LLM-based agents in option trading. LiveOption formulates the problem as structured sequential decision-making under realistic execution and capital constraints, and provides a reproducible environment with standardized interaction protocols. The framework includes three task suites covering portfolio overlays, event-driven earnings trading, and 0DTE intraday trading. We further propose a hierarchical metric suite that evaluates action validity, decision quality, risk characteristics, and outcome-level performance. Experiments show that current agents often fail to achieve competitive returns in most scenarios. LiveOption offers a principled testbed for evaluating structured decision-making beyond outcome-based metrics. 
+                </div>
+            </div>
             
             <div class="pub-item">
                 <h4 class="pub-title">DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models</h4>
@@ -324,7 +340,21 @@
                     We propose DualOptim+, a novel optimization framework for improving machine unlearning in large language models. It introduces a base state to capture common representations shared by forgetting and retaining objectives and delta states to preserve objective-specific residuals. This architecture allows the optimizer to adaptively bridge shared and decoupled states based on the directional conflict between forgetting and retaining gradients. We further introduce DualOptim+ 8bit, a quantized variant that reduces memory overhead without compromising performance. Extensive experiments across fictitious, real-world, and safety alignment tasks demonstrate that DualOptim+ consistently achieves a superior trade-off between forgetting efficacy and model utility.
                 </div>
             </div>
-           
+            
+            <div class="pub-item">
+                <h4 class="pub-title">QFinZero: A Unified Financial Toolchain for LLM-Based Trading Agents</h4>
+                <div class="pub-authors">Haochen Luo, LI Yifan, Ho Tin Ko, An Binh Minh, Junjie Xu, Tang Pok Hin, Wang Chak Wong, Gao Yuan, Zhengzhao Lai, Yuan Zhang, Chen Liu.</div>
+                <div class="pub-venue"> Association for Computational Linguistics (ACL) 2026 (System Demonstrations).</div>
+                <div class="pub-links">
+                    <button class="badge abstract-toggle" onclick="toggleAbstract('abs-QFinZero', this)">Abstract</button>
+                    <a href="../doc/QFinZero/QFinZero_PDF.pdf" target="_blank" class="badge pdf">PDF</a>
+                    <a href="https://github.com/CityU-MLO/qfinzero" target="_blank" class="badge code">Code</a>
+                </div>
+                <div id="abs-QFinZero" class="abstract-content">
+                    Large language model (LLM) agents are increasingly applied to financial decision-making tasks that require interaction with external tools, including market data retrieval, news analysis, and trade execution. However, existing trading systems rely on fragmented and task-specific APIs, resulting in inconsistent schemas, complex integration, and limited reproducibility. We present QFinZero, a unified trading environment for LLM-based financial agents. QFinZero standardizes three core capabilities: (i) multi-frequency market and derivatives data access, (ii) structured news and event retrieval, and (iii) stateful brokerage simulation with explicit order lifecycle management. All tools adopt consistent JSON schemas and time-aligned interfaces, enabling agents to acquire information and execute trades within a coherent framework. By abstracting financial interaction into composable, agent-invokable primitives, QFinZero reduces engineering overhead and supports reproducible evaluation through comprehensive logging and deterministic replay. We argue that such a standardized trading environment is essential for scalable research on LLM-based financial agents.
+                </div>
+            </div>
+
             <div class="pub-item">
                 <h4 class="pub-title">AlphaBench: Benchmarking Large Language Models in Formulaic Alpha Factor Mining</h4>
                 <div class="pub-authors">Haochen Luo, Ho Tin Ko, Jiandong Chen, David Sun, Yuan Zhang, Chen Liu.</div>
@@ -604,6 +634,17 @@
         </div>
 
         <div id="preprints" class="tab-content">
+            <div class="pub-item">
+                <h4 class="pub-title">CommuteProp: Decoupled Training for Communication Bound Split LLM Fine-Tuning</h4>
+                <div class="pub-authors">Ding Chen, Haochen Luo, Chen Liu.</div>
+                <div class="pub-links">
+                    <button class="badge abstract-toggle" onclick="toggleAbstract('abs-CommuteProp', this)">Abstract</button>
+                    <a href="../doc/CommuteProp/CommuteProp_PDF.pdf" target="_blank" class="badge pdf">PDF</a>
+                </div>
+                <div id="abs-CommuteProp" class="abstract-content">
+                    Split learning has emerged as a promising paradigm for privacy-preserving LLM fine-tuning, yet its practical deployment is severely hindered by the sequential communication-computation bottleneck. In conventional synchronous pipelines, clients remain idle while waiting for server-side gradients, resulting in substantial training inefficiency. We propose CommuteProp, an asynchronous split-learning algorithm that decouples the training process into two concurrent phases: a cross-block forward-backward pass and an in-block weight update. By overlapping computation with communication, CommuteProp reduces the marginal cycle time from a sum of all stage latencies to the dominant computational bottleneck. We provide a rigorous asynchronous error and convergence analysis. Moreover, we derive an NS preconditioner method based on our analysis to further mitigate staleness-induced noise. Comprehensive experiments indicate that our algorithm achieves substantial throughput gains while maintaining accuracy comparable to synchronous methods; furthermore, it functions as a plug-and-play module that not only accommodates but actively enhances existing privacy enhancement methods.
+                </div>
+            </div>
             <div class="pub-item">
                 <h4 class="pub-title">A Full-Pipeline Framework for Evaluating Membership Inference Attacks in Machine Learning</h4>
                 <div class="pub-authors">Ding Chen<sup>*</sup>, Xinwen Cheng<sup>*</sup>, Xuyang Zhong<sup>*</sup>, Xinping Chen, Xiaolin Huang, Chen Liu.</div>
